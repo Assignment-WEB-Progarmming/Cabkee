@@ -92,3 +92,19 @@
   from {opacity: .4}
   to {opacity: 1}
 }
+body{
+  background-image: url("cabkee/images/im2");
+}
+.navbar{
+  font-family: 'quicksand';
+  font-weight: 1000;
+  font-size:large;
+  color:black;
+  background-color:transparent;
+
+}
+
+img#logo{
+  width: 40px;
+
+}

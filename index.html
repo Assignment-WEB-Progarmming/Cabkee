@@ -5,20 +5,20 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="cabkee/css/style.css">
+
+        <link rel="stylesheet" href="cabkee/css/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="cabkee/js/js/bootstrap.min.js"></script>
 
-        <link href="cabkee/css/style.css" rel="stylesheet" />
         <script src="cabkee/js/scripts.js"></script>
-
 
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <nav id="navbar" class="navbar navbar-expand-lg navbar-light" >
             <a class="navbar-brand" href="#">
-                <img src="cabkee/images/logo.png" style="width:70px;" alt="">
+                <img src="cabkee/images/logo.png" id="logo" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -26,8 +26,8 @@
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item ">
+                  <a class="nav-link" href="#" id="text">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Link</a>
@@ -53,6 +53,24 @@
               </form>
             </div>
           </nav>
-          
+          <div
+            class="p-5 text-center bg-image"
+            style="
+            background-image: url('https://mdbootstrap.com/img/new/slides/041.jpg');
+            height: 400px;
+            "
+          >  
+          <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white">
+                <h1 class="mb-3">Heading</h1>
+                <h4 class="mb-3">Subheading</h4>
+                <a class="btn btn-outline-light btn-lg" href="#!" role="button"
+                >Call to action</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>                 
     </body>
 </html>
