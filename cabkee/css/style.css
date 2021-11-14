@@ -78,6 +78,7 @@ header,
   font-size: 25px;
   font-family: 'Anton' !important;
   padding-right: 0.8cm;
+  color:black;
 }
 @media (max-width: 991px) {
   .navbar:not(.top-nav-collapse) {
