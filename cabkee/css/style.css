@@ -82,7 +82,7 @@ header,
 }
 @media (max-width: 991px) {
   .navbar:not(.top-nav-collapse) {
-    background: #424f95 !important;
+    background: rgba(146, 103, 56, 0.76) !important;
   }
 }
 
