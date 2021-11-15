@@ -7,7 +7,7 @@ body, html {
   background-image: url("/cabkee/images/background0.jpg");
 
   /* Full height */
-  height: 80%;
+  height: 100%;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -23,9 +23,10 @@ body, html {
 }
 
 .navbar-brand {
-  padding: 0 15px 0px 55px;
+  padding: 0 15px 0px 25px;
   height: 80px;
   line-height: 80px;
+  padding-top: 0cm !important;
 }
 span.navbar-toggler-icon{
   color:#191a1b;
@@ -49,7 +50,6 @@ body,
 header,
 .view {
   height: 100%;
-
 }
 
 @media (max-width: 740px) {
@@ -69,8 +69,8 @@ header,
   }
 }
 
-.btn .fa {
-  margin-left: 3px;
+.intro{
+  padding-top: 5px;
 }
 
 .top-nav-collapse {
@@ -78,35 +78,34 @@ header,
 }
 
 .navbar:not(.top-nav-collapse) {
-  background: #ece9e6  !important;
+  background: transparent  !important;
 
 }
 .nav-item{
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'quicksand' !important;
-  font-weight: 500;
-  padding-right: 1cm;
+  font-weight: 400;
+  padding-right: 0.6cm;
   color:black;
-  text-shadow: 1px 1px 1px #adaaaa;
+  text-shadow: 0.5px 0.5px 0.5px #c2c1c1;
 }
-@media (max-width: 991px) {
-  .navbar:not(.top-nav-collapse) {
-    background: #ece9e6    !important;
-  }
+img#imageintro1{
+  width: 105%;
+  padding: 10px;
+  border: 2px solid rgb(163, 158, 4);
+}
+img#imageintro2{
+  width: 150%;
+  padding: 10px;
+  border: 2px solid rgb(163, 158, 4);
+  text-shadow:2px tomato;
+}
+img#imageintro3{
+  width: 150%;
+  padding: 10px;
+  border: 2px solid rgb(163, 158, 4);
 }
 
-.btn-white {
-  color: black !important;
-}
 
-h6 {
-  line-height: 1.7;
-}
 
-.rgba-gradient {
-  background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
-  background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
-  background: -webkit-gradient(linear, 45deg, from(rgba(42, 27, 161, 0.7)), to(rgba(29, 210, 177, 0.7)));
-  background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
-  background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
-} 
+
