@@ -155,7 +155,7 @@ main{
     color: #333333;
     padding-left: 5px;
 }
-.department-card_img:hover{
+.department-card:hover .department-card_name{
     text-decoration: underline;
 }
 
