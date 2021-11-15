@@ -68,10 +68,12 @@ body{
 .header-menu-list .nav-link:hover{ 
     color:#0f7c39;
     font-weight: bolder;
+    border-bottom: 2px solid #0f7c39;
 }
 
 main{
     margin-top:105px;
+    margin-bottom: 20px;
     background-color:white;
 }
 .container{
@@ -111,8 +113,51 @@ main{
     width: 100%;
     height: 250px;
 }
-
-
+.department{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.department-link{
+    flex-basis: 32%;
+    display: flex;
+    margin-bottom: 15px;
+    flex-flow: column nowrap;
+    border-radius: 8px;
+    background-color: #EEEEEE;
+    border:none;
+    box-shadow: 0 0 5px 5px #cacaca;
+}
+.department-card{
+    flex: 1;
+    position: relative;
+}
+.department-card_img{
+    width: 100%;
+    height:100%;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.department-card_name{
+    color: #333333;
+    font-weight: 500;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.topic-text-list{
+    list-style: none;
+}
+.topic-text-list_item{
+}
+.topic-text-list_item-link{
+    font-size: 14px;
+    color: #333333;
+    padding-left: 5px;
+}
+.department-card_img:hover{
+    text-decoration: underline;
+}
 
 
 footer{
