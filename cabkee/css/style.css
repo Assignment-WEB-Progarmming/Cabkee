@@ -17,7 +17,9 @@ body, html {
 .navbar {
   min-height: 80px;
 }
-
+.nav-link{
+  color: black;
+}
 .navbar-brand {
   padding: 0 15px 0px 35px;
   height: 80px;
