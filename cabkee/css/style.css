@@ -4,10 +4,10 @@ body, html {
 }
 .bg {
   /* The image used */
-  background-image: url("/cabkee/images/background3.jpg");
+  background-image: url("/cabkee/images/background0.jpg");
 
   /* Full height */
-  height: 100%;
+  height: 80%;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -17,13 +17,19 @@ body, html {
 .navbar {
   min-height: 80px;
 }
+.nav-link{
+  color: rgb(51, 21, 21);
+
+}
 
 .navbar-brand {
-  padding: 0 15px 0px 35px;
+  padding: 0 15px 0px 55px;
   height: 80px;
   line-height: 80px;
 }
-
+span.navbar-toggler-icon{
+  color:#191a1b;
+}
 .navbar-toggle {
   /* (80px - button height 34px) / 2 = 23px */
   margin-top: 23px;
@@ -33,9 +39,9 @@ body, html {
 @media (min-width: 768px) {
   .navbar-nav > li > a {
     /* (80px - line-height of 27px) / 2 = 26.5px */
-    padding-top: 26.5px;
-    padding-bottom: 26.5px;
-    line-height: 27px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 10px;
   }
 }
 html,
@@ -43,6 +49,7 @@ body,
 header,
 .view {
   height: 100%;
+
 }
 
 @media (max-width: 740px) {
@@ -67,22 +74,24 @@ header,
 }
 
 .top-nav-collapse {
-  background-color: rgba(146, 103, 56, 0.76)  !important;
+  background-color: #ece9e6  !important;
 }
 
 .navbar:not(.top-nav-collapse) {
-  background: rgba(146, 103, 56, 0.76) !important;
+  background: #ece9e6  !important;
 
 }
 .nav-item{
-  font-size: 25px;
-  font-family: 'Anton' !important;
-  padding-right: 0.8cm;
+  font-size: 20px;
+  font-family: 'quicksand' !important;
+  font-weight: 500;
+  padding-right: 1cm;
   color:black;
+  text-shadow: 1px 1px 1px #adaaaa;
 }
 @media (max-width: 991px) {
   .navbar:not(.top-nav-collapse) {
-    background: rgba(146, 103, 56, 0.76) !important;
+    background: #ece9e6    !important;
   }
 }
 
