@@ -69,9 +69,7 @@ header,
   }
 }
 
-.intro{
-  padding-top: 5px;
-}
+
 
 .top-nav-collapse {
   background-color: #ece9e6  !important;
@@ -89,21 +87,31 @@ header,
   color:black;
   text-shadow: 0.5px 0.5px 0.5px #c2c1c1;
 }
+
+.intro{
+  padding-top: 5px;
+  background-image: url("/cabkee/images/homepage/approaches-bg.svg");
+}
 img#imageintro1{
-  width: 105%;
+  width: 110%;
   padding: 10px;
-  border: 2px solid rgb(163, 158, 4);
 }
 img#imageintro2{
-  width: 150%;
+  width: 100%;
   padding: 10px;
-  border: 2px solid rgb(163, 158, 4);
   text-shadow:2px tomato;
 }
 img#imageintro3{
   width: 150%;
   padding: 10px;
-  border: 2px solid rgb(163, 158, 4);
+}
+div.slogan{
+  width:100%;
+  font-size:70px;
+  font-weight: 500;
+  color: rgb(17, 17, 56);
+  font-family: 'quicksand';
+  padding-left: 3cm;
 }
 
 
