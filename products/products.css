@@ -121,12 +121,12 @@ main{
 .department-link{
     flex-basis: 32%;
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     flex-flow: column nowrap;
     border-radius: 8px;
     background-color: #EEEEEE;
     border:none;
-    box-shadow: 0 0 5px 5px #cacaca;
+    
 }
 .department-card{
     flex: 1;
@@ -158,6 +158,92 @@ main{
 .department-card:hover .department-card_name{
     text-decoration: underline;
 }
+.department-link:hover {
+    box-shadow: 0 0 5px 5px #cacaca;
+}
+
+/* Best Seller */
+.best-seller_header{
+    margin: 20px 0;
+    font-size: 24px;
+}
+.best-seller_list{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.best-seller_item{
+    flex-basis: 15% ;
+    display: flex;
+    height: 280px;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+.best-seller_img{
+    width: 100%;
+}
+.seller_link{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+.best-seller_link:hover{
+    text-decoration: none;
+    border: 1px solid var(--color-general);
+}
+.best-seller_link-name{
+    color: black;
+    height: 30px;
+    font-size: 14px;
+    padding-left: 5px;
+}
+.best-seller_link-name:hover{
+    text-decoration: underline;
+}
+.best-seller_price{
+    margin: 10px 0;
+    padding-left: 5px;
+    color: black;
+    font-weight: bold;
+}
+.best-seller_price>.price-old{
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+/* Recommended Products */
+.recommended-products_list{
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
+}
+.recommended-products_item{
+    flex-basis: 19% ;
+    display: flex;
+    height: 100%;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+.recommended-products_link:hover{
+    text-decoration: none;
+    border: 1px solid var(--color-general);
+    box-shadow: 0px 5px 5px var(--color-general);
+}
+.recommended-products_link-name{
+    padding-left:5px;
+    color: #333333;
+    font-weight: 500;
+    font-size: 16px;
+}
+.recommended-products_price{
+    padding-left: 5px;
+    margin: 5px 0;
+    color:black;
+    font-weight: bold;
+
+}
+
+
 
 
 footer{
