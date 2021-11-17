@@ -148,10 +148,14 @@ main{
 .topic-text-list{
     list-style: none;
 }
-.topic-text-list_item{
-}
+
 .topic-text-list_item-link{
     font-size: 14px;
+    color: #333333;
+    padding-left: 5px;
+}
+.topic-text-list_item-link:hover{
+    font-weight: 500;
     color: #333333;
     padding-left: 5px;
 }
@@ -231,9 +235,13 @@ main{
 }
 .recommended-products_link-name{
     padding-left:5px;
+    height: 40px;
     color: #333333;
     font-weight: 500;
     font-size: 16px;
+}
+.recommended-products_link-name:hover{
+    text-decoration: underline;
 }
 .recommended-products_price{
     padding-left: 5px;
@@ -242,9 +250,6 @@ main{
     font-weight: bold;
 
 }
-
-
-
 
 footer{
     background-color:var(--color-general);
