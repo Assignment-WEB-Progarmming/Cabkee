@@ -1,7 +1,7 @@
 
 body, html {
   height: 100%;
-  background-color: #f3f3e9;
+  background-color: #ffffff;
 }
 .bg {
   /* The image used */
@@ -83,7 +83,7 @@ header,
 .nav-item{
   font-size: 18px;
   font-family: 'quicksand' !important;
-  font-weight: 400;
+  font-weight: 500;
   padding-right: 0.6cm;
   color:black;
   text-shadow: 0.5px 0.5px 0.5px #c2c1c1;
@@ -115,6 +115,8 @@ div.slogan{
   padding-left: 3cm;
 }
 
-
+.link-footer{
+  font-family: 'quicksand';
+}
 
 
