@@ -94,11 +94,11 @@ header,
   background-image: url("/house-self/custom/images/homepage/approaches-bg.svg");
 }
 img#imageintro1{
-  width: 110%;
+  width: 100%;
   padding: 10px;
 }
 img#imageintro2{
-  width: 100%;
+  width: 90%;
   padding: 10px;
   text-shadow:2px tomato;
 }
