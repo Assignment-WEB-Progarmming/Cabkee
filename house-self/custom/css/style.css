@@ -5,9 +5,8 @@ body, html {
   font-family: 'quicksand';
 }
 .bg {
-  /* The image used */
-  background-image: url("/house-self/custom/images/background0.jpg");
-
+  /*Background-image*/
+  background-image: url(/house-self/custom/images/background0.jpg);
   /* Full height */
   height: 100%;
 
@@ -79,8 +78,6 @@ header,
     height: 600px;
   }
 }
-
-
 
 .top-nav-collapse {
   background-color: #ece9e6  !important;
