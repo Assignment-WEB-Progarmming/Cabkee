@@ -2,6 +2,7 @@
 :root{
     --color-general: #E6E6E6;
     --color-general-2: #919191;
+    --color-general-3: #007562;
 }
 
 *{
@@ -83,7 +84,38 @@ main{
     width: 100%;
     padding: 0;
 }
+.item-view{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.item-img{
+    flex-basis: 72%;
+}
+.products-img{
+    width: 80%;
+}
+.item-information{
+    flex-basis: 38%;
+    display:flex;
+    flex-flow: column nowrap;
 
+}
+.item-card_price{
+    font-size: 30px;
+    margin: 10px 0;
+    color: black;
+    font-weight: bold;
+
+}
+.item-card_price>.price-old{
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: line-through;
+}
+.btnAdd{
+    background-color: var(--color-general-3);
+    color:white;
+}
 /* Footer */
 footer{
     background-color:var(--color-general);
