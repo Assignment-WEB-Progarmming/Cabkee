@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="house-self/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
     
+    <link rel="stylesheet" href="./custom/css/products/products_list.css">
     <link rel="stylesheet" href="./custom/css/products/products_item.css">
     <script src="./custom/js/products.js"></script>
 </head>
@@ -73,32 +74,163 @@
     <main >
         <div class="container">
             <div class="item-view">
-                <div class="item-img">
-                    <img src="./custom/images/products/living/A104-1.jpg" alt="" class="products-img" onload="rate_star('A104-1',4.5,102)">
+                <div class="item-view-img d-flex flex-column flex-grow-1 ">
+                    <div class="result-set-header">
+                        <div class="result-set-header_filter">
+                            <ul class="brower-list">
+                                <li class="brower-list_item"><a href="product_page.html" class="browwer_item-link">Tất cả sản phẩm</a></li>
+                                <li class="brower-list_item"><a href="product_page.html" class="browwer_item-link">Phòng Khách</a></li>
+                                <li class="brower-list_item last-item">Sofa</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item-view-content d-flex flex-row flex-grow-1">
+                        <ul class="list-img d-flex flex-column">
+                            <li class="list-img_item"><img src="./custom/images/products/living/A104-1.jpg" alt="" class="item item_selected"></li>
+                            <li class="list-img_item"><img src="./custom/images/products/living/A104-3.jpg" alt="" class="item"></li>
+                            <li class="list-img_item"><img src="./custom/images/products/living/A104-4.jpg" alt="" class="item"></li>
+                            <li class="list-img_item"><img src="./custom/images/products/living/A104-5.jpg" alt="" class="item"></li>
+                        </ul>
+                        <img src="./custom/images/products/living/A104-4.jpg" alt="" class="products-img" onload="rate_star_2('A104-1',4.5,102)" style="margin:auto">
+                    </div>
                 </div>
-                <div class="item-information">
+                <div class="item-information" style="margin-top: 50px;">
                     <h1 class="item-title" style="font-size:24px">Fabric Reversible Sectional Sofa, Gray</h1>
                     <div class="product-review" id="A104-1"></div>
                     <div class="item-card_price">
-                        <div class="price-new">17.070.000đ</div>
-                        <div class="price-old">27.890.000đ</div>
+                        <div class="price-new">17.070.000 đ</div>
+                        <div class="price-old">27.890.000 đ</div>
                     </div>
-                    <div class="item-variation">
-
+                    <div class="item-color"  style="margin: 10px 0">
+                        <span class="item-color-text" >Màu sắc:</span>
+                        <span class="item-color-name" style="margin-left:46px;font-weight: 500;">Xám</span>
                     </div>
-                    <div class="d-flex justify-content-between align-content-center" style="height: 50px;">
-                        <div class="item-quality d-flex justify-content-between flex-grow-1">
-                            <span style="margin:auto;">Số lượng:</span>
-                            <div class="d-flex align-content-center" style="height: 30px;">
-                                <button class="btn btn-outline-dark btn-sm" style="height: 100%">-</button>
-                                <input type="text" name="quality" id="textQuality" value="1" style="width: 30px; height: 100%">
-                                <button class="btn btn-outline-dark btn-sm" style="height: 100%">+</button>
+                    <div class="d-flex flex-column justify-content-between align-content-center" >
+                        <div class="item-quality d-flex flex-row flex-grow-1" style="margin: 5px 0">
+                            <span style="margin:auto; flex-basis: 25%;">Số lượng:</span>
+                            <div class="d-flex align-content-center" style="height: 30px; flex-basis: 75%;">
+                                <button class="btnQuality" style="height: 100%; width:30px; font-weight: bold;">-</button>
+                                <input type="text" name="quality" id="textQuality" value="1" style="width: 30px; height: 100%; text-align: center;border:0;">
+                                <button class="btnQuality" style="height: 100%;width:30px;font-weight: bold;">+</button>
                             </div>
                         </div>
-                        <input type="button" value="Thêm vào Giỏ hàng" class="flex-grow-1 btnAdd btn" style="margin: 0 10px;" > 
+                        <input type="button" value="Thêm vào Giỏ hàng" class="flex-grow-1 btnAdd btn " style="margin: 10px auto;width: 50%;" > 
                     </div>
                 </div>
             </div>
+            <div class="item-detail d-flex flex-row justify-content-between">
+                <div class="item-description">
+                    <div class="title">Mô tả sản phẩm</div>
+                    <div class="item-description-content">
+                        <ul>
+                            <li>
+                                Căn hộ cửa bạn nhỏ chật trội, cửa hàng kinh doanh của bạn không gian bé, nơi làm việc của bạn không có chỗ nằm nghỉ ngơi, với chiếc Sofa tiện ích có đủ yếu tố và chế độ để phục vụ những nhu cầu thiết yếu của bạn.
+                            </li>
+                            <li>
+                                Nếu không gian của bạn không đủ cho 1 bộ bàn ghế và 1 chiếc giường hoặc nơi làm việc cần có 1 chiếc giường để nghỉ ngơi. Nay đã có giường Sofa gấp gọn thành ghế. Khi bạn cần nằm nghỉ ngơi chỉ cần trảu ra thành giường,khi bạn không nằm nghỉ ngơi thì bạn có thể gấp gọn thành ghế ngồi.
+                            </li>
+                            <li>
+                                Chất liệu: Ghế bọc nhung polyester bền bỉ ( thoáng khí, không bóng, không bám bụi)
+                            </li>
+                            <li>
+                                Đệm mềm và thoải mái, ngồi lâu ko bị nóng hay bí lưng hay mỏi người
+                            </li>
+                            <li>
+                                Thiết kế góc nghiêng phù hợp với đường cong của cơ thể giúp giảm áp lực tối đa đến cột sống
+                            </li>
+                            <li>
+                                Ghế sofa thông minh thiết kế phần tựa lưng ngả được ra để làm giường cá nhân hay nhà có khách
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item-specific">
+                    <div class="title">Thông số sản phẩm</div>
+                    <div class="item-specific-content">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td class="col-1">Mẫu thiết kế </td>
+                                    <td>KS-297-GRY</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-1">Mã sản phẩm</td>
+                                    <td>118372372</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-1">Sản xuất bởi</td>
+                                    <td>Abbyson Living</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-1">Kích thước</td>
+                                    <td>203cm * 91cm / 67 kg </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-1">Màu sắc</td>
+                                    <td>Xám </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-1">Chất liệu</td>
+                                    <td>Polyester, Ván ép, Khung gỗ cứng, Chân gỗ cao su</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="topic-item">
+                <div class="department-title">
+                    <h4 class="department-title_text">Sản phẩm liên quan</h4>
+                </div>
+                <ul class="department-list">
+                    <li class="department-card">
+                        <a href="#" class="department-card_link">
+                            <img src="./custom/images/products/living/A104-1.jpg" alt="" class="department-card_img best-seller_img" onload="rate_star('A104-1',4.5,102)">
+                            <div class="department-card_link-name">Fabric Club Chair, Wheat</div>
+                            <div class="department-card_price ">1.700.000đ </div>
+                            <div class="products-review" id="A104-1">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="department-card">
+                        <a href="#" class="department-card_link">
+                            <img src="./custom/images/products/living/A102-1.jpg" alt="" class="department-card_img best-seller_img" onload="rate_star('A102-1',4.5,102)">
+                            <div class="department-card_link-name">Fabric Club Chair, Wheat</div>
+                            <div class="department-card_price ">1.700.000đ </div>
+                            <div class="products-review" id="A102-1">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="department-card">
+                        <a href="#" class="department-card_link">
+                            <img src="./custom/images/products/living/A101-1.jpg" alt="" class="department-card_img best-seller_img" onload="rate_star('A101-1',4.5,102)">
+                            <div class="department-card_link-name">Fabric Club Chair, Wheat</div>
+                            <div class="department-card_price ">1.700.000đ </div>
+                            <div class="products-review" id="A101-1">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="department-card">
+                        <a href="#" class="department-card_link">
+                            <img src="./custom/images/products/living/a104-1.jpg" alt="" class="department-card_img best-seller_img" onload="rate_star('a104-1',4.5,102)">
+                            <div class="department-card_link-name">Fabric Club Chair, Wheat</div>
+                            <div class="department-card_price ">1.700.000đ </div>
+                            <div class="products-review" id="a104-1">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="department-card">
+                        <a href="#" class="department-card_link">
+                            <img src="./custom/images/products/living/A103-1.jpg" alt="" class="department-card_img best-seller_img" onload="rate_star('A103-1',4.5,102)">
+                            <div class="department-card_link-name">Fabric Club Chair, Wheat</div>
+                            <div class="department-card_price ">1.700.000đ </div>
+                            <div class="products-review" id="505-1">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <img src="./custom/images/products/living/bg-A1.png" alt="" class="banner-page" style="width: 100%;margin: 10px 0;">
         </div>
     </main>
     <footer>

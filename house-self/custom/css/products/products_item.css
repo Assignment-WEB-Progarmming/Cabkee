@@ -84,6 +84,35 @@ main{
     width: 100%;
     padding: 0;
 }
+.result-set-header_filter{
+    padding: 10px 0;
+    margin: 0;
+    height:40px;
+}
+.brower-list{
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.browwer_item-link{
+    color: black;
+    font-weight: 500;
+}
+.browwer_item-link:hover{
+    color: black;
+    font-weight: 500;
+}
+.brower-list_item::after{
+    content: ">";
+    padding:  0 5px;
+}
+.last-item{
+    color: var(--color-general-2);
+    font-weight: 500;
+}
+.last-item::after{
+    content: "";
+}
 .item-view{
     display: flex;
     flex-flow: row nowrap;
@@ -91,8 +120,27 @@ main{
 .item-img{
     flex-basis: 72%;
 }
+.list-img{
+    list-style-type: none;
+}
+.list-img .item{
+    margin:5px 10px 5px 0;
+    width: 80px;
+    height: 80px;
+}
+.list-img .item_selected{
+    border: 1px solid black;
+}
+.list-img .item:hover{
+    padding: 1px;
+    border: 1px solid var(--color-general);
+}
 .products-img{
-    width: 80%;
+    height: 592px;
+    width: 592px;
+}
+span.review-text{
+    color:#007562;
 }
 .item-information{
     flex-basis: 38%;
@@ -103,18 +151,47 @@ main{
 .item-card_price{
     font-size: 30px;
     margin: 10px 0;
-    color: black;
+    color: #F57224;
     font-weight: bold;
 
 }
 .item-card_price>.price-old{
+    color: #6b6b6b;
     font-size: 12px;
     font-weight: normal;
     text-decoration: line-through;
 }
+.btnQuality{
+    background-color: var(--color-general);
+    font-size: 20px;
+    border: none;
+}
+.btnQuality:hover{
+    background-color: var(--color-general-2);
+    color:white;
+    border: none;
+}
 .btnAdd{
     background-color: var(--color-general-3);
     color:white;
+}
+.title{
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0 0 10px 0;
+    width: 28%;
+    border-bottom: 3px solid var(--color-general-3);
+}
+/* Mô tả sản phẩm */
+.item-description{
+    flex-basis: 48%;
+}
+
+/* Thông số sản phẩm */
+.item-specific{
+    flex-basis: 48%;
 }
 /* Footer */
 footer{
