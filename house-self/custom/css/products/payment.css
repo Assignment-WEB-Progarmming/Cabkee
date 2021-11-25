@@ -1,0 +1,129 @@
+/* General */
+:root{
+    --color-general: #E6E6E6;
+    --color-general-2: #919191;
+    --color-general-3: #007562;
+    --color-general-4: #F57224;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+/* Main */
+main{
+    margin-top:105px;
+    padding-bottom: 20px;
+    background-color:var(--color-general);
+}
+.container{
+    max-width: 1200px;
+    width: 100%;
+    padding: 0;
+    background-color:white;
+
+}
+.title{
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+/* left column */
+.left-col{
+    flex-basis: 63%;
+    padding-right: 10px;
+}
+.left-row{
+    background-color: white;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+.information{
+    border: 1px solid var(--color-general-3);
+}
+.user-infor-detail{
+    display: none;
+}
+.product-img{
+    flex: 1;
+    margin:auto 10px;
+
+}
+.product-title{
+    flex: 6;
+    font-size:16px;
+}
+.product-price{
+    flex: 2;
+    font-size:16px;
+    font-weight:500;
+    color:#F57224;
+}
+.product-quatity{
+    flex: 2;
+}
+#order-note{
+    width: 95%;
+    margin:5px 10px; 
+    padding: 10px;
+}
+
+/* right column */
+.right-col{
+    flex-basis: 35%;
+}
+
+#payment-way-content,#ship-service-content{
+    width:85%; 
+    height:fit-content;
+    padding: 5px 0; 
+    align-self:center;
+    border: none;
+}
+.ship-service-list{
+    list-style: none;
+}
+.ship-service-item{
+    flex-basis: 32%;
+    border: 1px solid #F57224;
+    border-radius: 5px;
+    padding: 5px;
+}
+.ship-service-content{
+    padding: 5px;
+}
+.ship-service-title{
+    font-size: 14px;    
+    font-weight: 500;
+}
+.ship-service-price{
+    font-size: 14px;
+}
+.ship-service-time{
+    font-size: 14px;
+}
+
+.btnApply{
+    width: 100%;
+    background-color: var(--color-general-3);
+    color:white;
+}
+.btnApply:hover{
+    opacity: 0.9;
+}
+.btnPay{
+    margin: 10px auto;
+    width: 100%;
+    background-color: var(--color-general-4);
+    color:white;
+    opacity: 0.9;
+}
+.btnPay:hover{
+    opacity: 1;
+}
