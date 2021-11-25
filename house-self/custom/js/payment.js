@@ -25,3 +25,8 @@ function payment_way(){
             break;
     }
 }
+
+function check_radio(name){
+    var radio = document.querySelector("ship-service-item").getbyID(name);
+    alert("radio.name");
+}
