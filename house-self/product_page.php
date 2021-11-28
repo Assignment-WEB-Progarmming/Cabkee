@@ -12,9 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="house-self/bootstrap/js/bootstrap.min.js"></script>
     
-    <link rel="stylesheet" href="./custom/css/products/header.css">
-    <link rel="stylesheet" href="./custom/css/products/products_page.css">
-    <script src="./custom/js/products.js"></script>
+    <link rel="stylesheet" href="custom/css/products/header.css">
+    <link rel="stylesheet" href="custom/css/products/products_page.css">
+    <script src="custom/js/products.js"></script>
 </head>
 <body >
     <header class="fixed-top" >
@@ -55,11 +55,11 @@
                             <div   >
                                 <a class="nav-link" href="#" onmouseover="set_show_index(0)" >Phòng Khách</a>
                                 <div class="dropdown-menu"  onmouseleave="hide_content(0)" >
-                                    <a class="dropdown-item" href="#">Sofa</a>
-                                    <a class="dropdown-item" href="#">Ghế bành</a>
-                                    <a class="dropdown-item" href="#">Bàn Coffee</a>
-                                    <a class="dropdown-item" href="#">Tấm thảm</a>
-                                    <a class="dropdown-item" href="#">Kệ tủ</a>
+                                    <a class="dropdown-item" href="product_list.php">Sofa</a>
+                                    <a class="dropdown-item" href="product_list.php">Ghế bành</a>
+                                    <a class="dropdown-item" href="product_list.php">Bàn Coffee</a>
+                                    <a class="dropdown-item" href="product_list.php">Tấm thảm</a>
+                                    <a class="dropdown-item" href="product_list.php">Kệ tủ</a>
                                 </div>
                             </div>
                         <li class="nav-item dropdown show">
@@ -115,7 +115,7 @@
                 </div>
             </nav>
         </div>
-        <script src="./custom/js/header.js"></script>
+        <script src="custom/js/header.js"></script>
     </header>
     <main >
         <div class="container">
@@ -127,7 +127,7 @@
                         </h1>
                         <ul class="navbar-nav main-nav_menu-list ">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Phòng Khách</a>
+                                <a class="nav-link" href="product_list.php">Phòng Khách</a>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Phòng Làm việc</a>
                             </li>
@@ -155,28 +155,28 @@
             </div>
             <div class="department">
                 <div class="department-link">
-                    <a href="#" class="department-card">
+                    <a href="product_list.php" class="department-card">
                         <img class="department-card_img" src="./custom/images/products/living/bg-2.jpg" alt="#">
                         <div class="department-card_name">Phòng Khách</div>
                     </a>
                     <ul class="topic-text-list">
                         <li class="topic-text-list_item">
-                            <a href="product_list.html" class="topic-text-list_item-link">Sofa</a>
+                            <a href="product_list.php" class="topic-text-list_item-link">Sofa</a>
                         </li>
                         <li class="topic-text-list_item">
-                            <a href="" class="topic-text-list_item-link">Ghế bành (Armchair)</a>
+                            <a href="product_list.php" class="topic-text-list_item-link">Ghế bành (Armchair)</a>
                         </li>
                         <li class="topic-text-list_item">
-                            <a href="" class="topic-text-list_item-link">Bàn Coffee</a>
+                            <a href="product_list.php" class="topic-text-list_item-link">Bàn Coffee</a>
                         </li>
                         <li class="topic-text-list_item">
-                            <a href="" class="topic-text-list_item-link">Tấm thảm</a>
+                            <a href="product_list.php" class="topic-text-list_item-link">Tấm thảm</a>
                         </li>
                         <li class="topic-text-list_item">
-                            <a href="" class="topic-text-list_item-link">Kệ tủ</a>
+                            <a href="product_list.php" class="topic-text-list_item-link">Kệ tủ</a>
                         </li>
                         <li class="topic-text-list_item">
-                            <a href="" class="topic-text-list_item-link" style="font-weight: bold;">Tất cả sản phẩm > </a>
+                            <a href="product_list.php" class="topic-text-list_item-link" style="font-weight: bold;">Tất cả sản phẩm > </a>
                         </li>
                     </ul>
                 </div>

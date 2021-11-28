@@ -58,3 +58,62 @@ function rate_star_2(id, rate,text)
     node.appendChild(textReview);
     
 }
+
+function changeDvvc(dvvc, tien) {
+    dvvc = tien;
+}
+
+function chuyenHuong(){
+    window.location = "product_page.php";
+}
+
+function addToCart(id) {
+    var sl = Number($("input[name='quality']").val());
+    /* $.post('../api/cookie.php', {
+        'action': 'add',
+        'id': id,
+        'num': 1
+    }, function(data) {
+        location.reload()
+    }) */
+    $.ajax({
+        url: '../api/cookie.php',
+        type: 'POST',
+        data: {
+            'action': 'add',
+            'id': id,
+            'num': sl
+        },
+        success: function(data) {
+            setTimeout(chuyenHuong, 1500);
+            $('#success').html('Thao tác thành công');
+            $('#success').show();
+        },
+        error: function(e) {
+            console.log(e.message);
+        }
+    });
+}
+
+function deleteCart(id) {
+    /* $.post('cookie.php', {
+        'action': 'delete',
+        'id': id
+    }, function(data) {
+        location.reload()
+    }) */
+    $.ajax({
+        url: '../api/cookie.php',
+        type: 'POST',
+        data: {
+            'action': 'delete',
+            'id': id,
+        },
+        success: function(data) {
+            location.reload()
+        },
+        error: function(e) {
+            console.log(e.message);
+        }
+    });
+}

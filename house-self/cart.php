@@ -1,3 +1,31 @@
+<?php
+require_once('../db/dbhelper.php');
+require_once('../utils/utilities.php');
+$count = 0;
+$total = 0;
+$ship = 18000;
+$soSP = 0;
+
+$cart = [];
+if (isset($_COOKIE['cart'])) {
+    $json = $_COOKIE['cart'];
+    $cart = json_decode($json, true);
+}
+$idList = [];
+foreach ($cart as $item) {
+    $idList[] = $item['id'];
+}
+if (count($idList) > 0) {
+    $idList = implode(',', $idList);
+    //[2, 5, 6] => 2,5,6
+
+    $sql = "select * from db_product where id in ($idList)";
+    $cartList = executeResult($sql);
+} else {
+    $cartList = [];
+}
+//var_dump($cartList)
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +41,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="./custom/css/products/header.css">
-    <link rel="stylesheet" href="./custom/css/cart.css">
-
+    <link rel="stylesheet" href="custom/css/products/header.css">
+    <link rel="stylesheet" href="custom/css/cart.css">
+    <script src="custom/js/products.js"></script>
 </head>
 
 <body>
@@ -29,13 +57,10 @@
                 <!--Collapse-->
                 <form class="form-inline">
                     <div class=" md-form my-0 in-search">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search products ..."
-                            aria-label="Search" style="width:100%">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search products ..." aria-label="Search" style="width:100%">
                     </div>
                 </form>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="user-action">
@@ -55,7 +80,7 @@
             <nav class="navbar-expand-sm ">
                 <ul class="navbar-nav header-menu-list ">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Phòng Khách</a>
+                        <a class="nav-link" href="product_list.php">Phòng Khách</a>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Phòng Làm việc</a>
                     </li>
@@ -84,34 +109,45 @@
             <div class="d-flex flex-row justify-content-between">
                 <div class="list-products">
                     <div style="padding: 5px 0; border-bottom: 1px solid #E6E6E6;">
-                        <input type="checkbox" name="select-products"
-                            style="width: 16px; height: 16px;margin: auto 10px;" id="">
+                        <input type="checkbox" name="select-products" style="width: 16px; height: 16px;margin: auto 10px;" id="">
                         <span> Chọn tất cả ( </span>
                         <span> 1</span>
                         <span> sản phẩm )</span>
                     </div>
-                    <div class="product-item d-flex ">
-                        <div class="product-img" style="flex-basis: 100px; margin:auto 10px;"><img
-                                src="./custom/images/products/living/A104-1.jpg" alt=""
-                                style="width: 80px; height:80px; border: 1px solid #E6E6E6;"></div>
-                        <div class="product-title"><span>
-                                Fabric Reversible Sectional Sofa, Gray
-                            </span></div>
-                        <div class="product-price"> 17.070.000 đ </div>
-                        <div class="product-quality">
-                            <div class="d-flex align-content-center" style="height: 30px; flex-basis: 75%;">
-                                <button class="btnQuality"
-                                    style="height: 100%; width:30px; font-weight: bold;"><span>-</span></button>
-                                <input type="text" name="quality" id="textQuality" value="1"
-                                    style="width: 50px; height: 100%; text-align: center;border:0;" readonly>
-                                <button class="btnQuality"
-                                    style="height: 100%;width:30px;font-weight: bold;"><span>+</span></button>
+                    <?php
+                    if (count($cartList) != 0) {
+                        foreach ($cartList as $item) {
+                            $num = 0;
+                            foreach ($cart as $value) {
+                                if ($value['id'] == $item['id']) {
+                                    $num += $value['num'];
+                                    break;
+                                }
+                            }
+                            $soSP += $num;
+                            $total += $num * $item['price'];
+                            echo
+                            '
+                            <div class="product-item d-flex ">
+                                <div class="product-img" style="flex-basis: 100px; margin:auto 10px;"><img
+                                    src="'.$item['thumbnail'].'" alt=""
+                                    style="width: 80px; height:80px; border: 1px solid #E6E6E6;"></div>
+                                <div class="product-title"><span>' . $item['title'] . '</span></div>
+                                <div class="product-price">' . number_format($num * $item['price'], 0, ',', '.') . ' đ</div>
+                                <div class="product-quality">
+                                    <div class="d-flex align-content-center" style="height: 30px; flex-basis: 75%;">
+                                        <input type="number" name="quality" id="textQuality" value="' . $num . '"
+                                        style="width: 50px; height: 100%; text-align: center;border:0;" readonly>
+                                    </div>
+                                </div>
+                                <div class="btnDelete" style="width: 30px;">
+                                    <span class="fa fa-trash" onclick="deleteCart('.$item['id'].')"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="btnDelete" style="width: 30px;">
-                            <span class="fa fa-trash"></span>
-                        </div>
-                    </div>
+                            ';
+                        }
+                    }
+                    ?>
                 </div>
                 <div class="pay">
                     <div class="address" style="border-bottom: 1.5px solid #cecece;">
@@ -127,20 +163,19 @@
                                 tin đơn hàng</span></div>
                         <div class="cart-quality d-flex justify-content-between " style="padding:5px 10px">
                             <span>Số sản phẩm: </span>
-                            <span>1</span>
+                            <span><?php echo $soSP ?></span>
                         </div>
                         <div class="cart-price-temp d-flex justify-content-between" style="padding:5px 10px">
                             <span>Tạm tính :</span>
-                            <span> 17.070.000 đ </span>
+                            <span><?php echo number_format($total, 0, ',', '.'); echo 'đ' ?></span>
                         </div>
                         <div class="cart-ship-price d-flex justify-content-between" style="padding:5px 10px">
                             <span>Phí giao hàng :</span>
-                            <span> 18.000 đ </span>
+                            <span><?php echo number_format($ship, 0, ',', '.'); echo 'đ' ?></span>
                         </div>
                         <div class="cart-discount d-flex justify-content-between" style="padding:5px 10px">
                             <div style="flex-basis: 65%;">
-                                <input disabled="disabled" type="text" name="discount-id" id=""
-                                    placeholder="Mã giảm giá" style="width: 100%;padding: 5px;">
+                                <input disabled="disabled" type="text" name="discount-id" id="" placeholder="Mã giảm giá" style="width: 100%;padding: 5px;">
                             </div>
                             <div style="flex-basis: 33%;">
                                 <input type="button" value="Áp dụng" class="flex-grow-1 btnApply btn ">
@@ -148,13 +183,13 @@
                         </div>
                         <div class="cart-total d-flex justify-content-between" style="padding:5px 10px">
                             <span style="font-weight: bold;">Tổng cộng:</span>
-                            <span style="font-weight: bold; color: #F57224; font-size: 20px;">17.088.000 đ</span>
+                            <span style="font-weight: bold; color: #F57224; font-size: 20px;"><?php echo number_format($ship + $total, 0, ',', '.'); echo 'đ' ?></span>
                         </div>
                         <div style="font-size: 12px; text-align: right;">
                             <span>Đã bao gồm VAT (nếu có)</span>
                         </div>
                         <div class="pay-btn" style="padding:5px 10px">
-                            <input type="button" value="Thanh toán" class="flex-grow-1 btnPay btn ">
+                            <a href="payment.php"><input type="button" value="Thanh toán" class="flex-grow-1 btnPay btn "></a>
                         </div>
                     </div>
                 </div>
@@ -166,7 +201,7 @@
             Footer
         </div>
     </footer>
-    <script src="./custom/js/cart.js"></script>
+    <script src="custom/js/cart.js"></script>
 </body>
 
 </html>
