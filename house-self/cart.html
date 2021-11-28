@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Giỏ hàng</title>
-        <link href="./custom/images/logo.png" rel="icon" type="image/x-icon" />
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="./bootstrap/js/bootstrap.min.js"></script>
-        
-        <link rel="stylesheet" href="./custom/css/products/header.css">
-        <link rel="stylesheet" href="./custom/css/cart.css">
-        
-    </head>
+
+<head>
+    <title>Giỏ hàng</title>
+    <link href="./custom/images/logo.png" rel="icon" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./custom/css/products/header.css">
+    <link rel="stylesheet" href="./custom/css/cart.css">
+
+</head>
+
 <body>
+<<<<<<< HEAD
     <header class="fixed-top" >
         <link rel="stylesheet" href="./custom/css/products/header.css">
         <div class="header__first" onmouseover="hide_all_content()">
+=======
+    <header class="fixed-top">
+        <div class="header__first">
+>>>>>>> 27702f4c3c2ace9bd1cd6b4c3ebbbe6ebf4cc871
             <nav class="navbar justify-content-between navbar-expand-sm bg-light navbar-light ">
                 <a class="navbar-brand" href="#">
                     <img src="./custom/images/logo-nobrand.png" alt="" style="width: 40px">
-                    <span><img src="./custom/images/brand3.png" alt="" style="height: 20px" ></span>
+                    <span><img src="./custom/images/brand3.png" alt="" style="height: 20px"></span>
                 </a>
                 <!--Collapse-->
-                <form class="form-inline" >
+                <form class="form-inline">
                     <div class=" md-form my-0 in-search">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search products ..." aria-label="Search" style="width:100%">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search products ..."
+                            aria-label="Search" style="width:100%">
                     </div>
+<<<<<<< HEAD
                 </form>        
                 <button class="navbar-toggler" type="button" onclick=collapse_menu()>
                 <span class="navbar-toggler-icon"></span>
+=======
+                </form>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+>>>>>>> 27702f4c3c2ace9bd1cd6b4c3ebbbe6ebf4cc871
                 </button>
                 <div class="user-action">
                     <i class="glyphicon glyphicon-user"></i>
@@ -41,7 +57,7 @@
                             <img src="./custom/images/icon_login.png" alt="" style="width: 30px">
                         </span>
                         <span class="login_content">
-                            Sign In 
+                            Sign In
                         </span>
                     </a>
                 </div>
@@ -49,6 +65,7 @@
         </div>
         <div class="header__second navbar-collapse " id="navbarSupportedContent">
             <nav class="navbar-expand-sm ">
+<<<<<<< HEAD
                     <ul class="navbar-nav header-menu-list ">
                         <span id="stt_item" style="display: none;"> 0 </span>
                         <li class="nav-item dropdown show " >
@@ -113,6 +130,27 @@
                         </li>
                     </ul>  
                 </div>
+=======
+                <ul class="navbar-nav header-menu-list ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Phòng Khách</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Phòng Làm việc</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Phòng Ngủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Đèn trang trí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bàn & Ghế</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Đồ trang trí</a>
+                    </li>
+                </ul>
+>>>>>>> 27702f4c3c2ace9bd1cd6b4c3ebbbe6ebf4cc871
             </nav>
         </div>
         <script src="./custom/js/header.js"></script>
@@ -127,40 +165,47 @@
             <div class="d-flex flex-row justify-content-between">
                 <div class="list-products">
                     <div style="padding: 5px 0; border-bottom: 1px solid #E6E6E6;">
-                        <input type="checkbox" name="select-products" style="width: 16px; height: 16px;margin: auto 10px;" id="">
+                        <input type="checkbox" name="select-products"
+                            style="width: 16px; height: 16px;margin: auto 10px;" id="">
                         <span> Chọn tất cả ( </span>
                         <span> 1</span>
                         <span> sản phẩm )</span>
                     </div>
                     <div class="product-item d-flex ">
-                        <input type="checkbox" name="select-products" style="width: 16px; height: 16px;margin: auto 10px;" id="">
-                        <div class="product-img" style="flex-basis: 100px; margin:auto 10px;"><img src="./custom/images/products/living/A104-1.jpg" alt=""  style="width: 80px; height:80px; border: 1px solid #E6E6E6;"></div>
+                        <div class="product-img" style="flex-basis: 100px; margin:auto 10px;"><img
+                                src="./custom/images/products/living/A104-1.jpg" alt=""
+                                style="width: 80px; height:80px; border: 1px solid #E6E6E6;"></div>
                         <div class="product-title"><span>
-                            Fabric Reversible Sectional Sofa, Gray
-                        </span></div>
+                                Fabric Reversible Sectional Sofa, Gray
+                            </span></div>
                         <div class="product-price"> 17.070.000 đ </div>
                         <div class="product-quality">
                             <div class="d-flex align-content-center" style="height: 30px; flex-basis: 75%;">
-                                <button class="btnQuality" style="height: 100%; width:30px; font-weight: bold;" ><span>-</span></button>
-                                <input type="text" name="quality" id="textQuality" value="1" style="width: 50px; height: 100%; text-align: center;border:0;">
-                                <button class="btnQuality" style="height: 100%;width:30px;font-weight: bold;"><span>+</span></button>
+                                <button class="btnQuality"
+                                    style="height: 100%; width:30px; font-weight: bold;"><span>-</span></button>
+                                <input type="text" name="quality" id="textQuality" value="1"
+                                    style="width: 50px; height: 100%; text-align: center;border:0;" readonly>
+                                <button class="btnQuality"
+                                    style="height: 100%;width:30px;font-weight: bold;"><span>+</span></button>
                             </div>
                         </div>
                         <div class="btnDelete" style="width: 30px;">
-                            <span class="fa fa-trash" ></span>
+                            <span class="fa fa-trash"></span>
                         </div>
                     </div>
                 </div>
                 <div class="pay">
                     <div class="address" style="border-bottom: 1.5px solid #cecece;">
-                        <div class="address-title" style="padding: 10px;color: #969696;"><span>Địa chỉ giao hàng</span></div>
+                        <div class="address-title" style="padding: 10px;color: #969696;"><span>Địa chỉ giao hàng</span>
+                        </div>
                         <div class="address-content">
                             <span class="fa fa-map-marker" style="padding: 10px;"></span>
                             <span class="address-text">TP.HCM, Bình Thạnh, Phường 5</span>
                         </div>
                     </div>
                     <div class="cart-information">
-                        <div class="cart-title" style="padding : 10px;font-size: 20px;  font-weight: 500"><span>Thông tin đơn hàng</span></div>
+                        <div class="cart-title" style="padding : 10px;font-size: 20px;  font-weight: 500"><span>Thông
+                                tin đơn hàng</span></div>
                         <div class="cart-quality d-flex justify-content-between " style="padding:5px 10px">
                             <span>Số sản phẩm: </span>
                             <span>1</span>
@@ -175,10 +220,11 @@
                         </div>
                         <div class="cart-discount d-flex justify-content-between" style="padding:5px 10px">
                             <div style="flex-basis: 65%;">
-                                <input disabled="disabled" type="text" name="discount-id" id="" placeholder="Mã giảm giá" style="width: 100%;padding: 5px;">
+                                <input disabled="disabled" type="text" name="discount-id" id=""
+                                    placeholder="Mã giảm giá" style="width: 100%;padding: 5px;">
                             </div>
                             <div style="flex-basis: 33%;">
-                                <input type="button" value="Áp dụng" class="flex-grow-1 btnApply btn "  > 
+                                <input type="button" value="Áp dụng" class="flex-grow-1 btnApply btn ">
                             </div>
                         </div>
                         <div class="cart-total d-flex justify-content-between" style="padding:5px 10px">
@@ -186,10 +232,10 @@
                             <span style="font-weight: bold; color: #F57224; font-size: 20px;">17.088.000 đ</span>
                         </div>
                         <div style="font-size: 12px; text-align: right;">
-                            <span >Đã bao gồm VAT (nếu có)</span>
+                            <span>Đã bao gồm VAT (nếu có)</span>
                         </div>
                         <div class="pay-btn" style="padding:5px 10px">
-                            <input type="button" value="Thanh toán" class="flex-grow-1 btnPay btn "  > 
+                            <input type="button" value="Thanh toán" class="flex-grow-1 btnPay btn ">
                         </div>
                     </div>
                 </div>
@@ -199,4 +245,5 @@
     <iframe id="footer-page" src="./footer.html" height="500px" frameborder="0" scrolling="no"></iframe>
     <script src="./custom/js/cart.js"></script>
 </body>
+
 </html>
