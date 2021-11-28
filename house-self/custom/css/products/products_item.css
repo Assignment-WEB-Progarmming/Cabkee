@@ -129,12 +129,46 @@ span.review-text{
 .item-description{
     flex-basis: 48%;
 }
+table td.col-3{
+    font-weight: 500;
+    background-color: var(--color-general)
+}
 
 /* Thông số sản phẩm */
 .item-specific{
     flex-basis: 48%;
 }
-/* Footer */
-footer{
-    background-color:var(--color-general);
+
+.department-card{
+    flex-basis: 24% ;
+    display: flex;
+    height: 100%;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+.department-card_img{
+    width: 100%;
+}
+.department-card_link:hover{
+    text-decoration: none;
+    border: 1px solid var(--color-general);
+    box-shadow: 0px 5px 5px var(--color-general);
+}
+.department-card_link-name{
+    padding-left:5px;
+    height: 40px;
+    color: #333333;
+    font-weight: 500;
+    font-size: 16px;
+    
+}
+.department-card_link-name:hover{
+    text-decoration: underline;
+}
+.department-card_price{
+    padding-left: 5px;
+    margin: 5px 0;
+    color:black;
+    font-weight: bold;
+
 }

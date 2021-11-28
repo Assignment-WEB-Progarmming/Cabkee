@@ -34,7 +34,7 @@ main{
     list-style: none;
     display: flex;
     flex-flow: row nowrap;
-    
+    justify-content: center;    
 }
 .browwer_item-link{
     color: black;
@@ -117,9 +117,4 @@ main{
 .page-item.active .page-link{
     background-color: var(--color-general-3);
     border-color: var(--color-general-3);
-}
-
-/* Footer */
-footer{
-    background-color:var(--color-general);
 }

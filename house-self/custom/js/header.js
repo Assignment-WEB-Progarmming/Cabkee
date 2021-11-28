@@ -38,3 +38,11 @@ function hide_all_content()
         hide_content(i);
     }
 }
+function collapse_menu()
+{
+    var menu = document.getElementById("navbarSupportedContent");
+    if(menu.style.display == "none")
+        menu.style.display = "block";
+    else
+        menu.style.display = "none";
+}

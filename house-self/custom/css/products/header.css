@@ -88,3 +88,43 @@ main{
 footer{
     background-color:var(--color-general);
 }
+
+@media screen and (max-width: 1024) {
+    .header-menu-list .nav-item{ 
+        flex:1;
+        font-size: 14px;
+    }
+    #navbarSupportedContent{
+        display:block;
+    }
+}
+@media screen and (max-width: 768px) {
+    .header-menu-list .nav-item{ 
+        flex:1;
+        font-size: 14px;
+    }
+    #navbarSupportedContent{
+        display:block;
+    }
+}
+@media screen and (max-width: 540px) {
+    main{
+        margin: 67px 10px 10px 20px;
+    }
+    .main-nav{
+        height:fit-content;
+        margin: 10px 0;
+    }
+    #navbarSupportedContent{
+        display:none;
+    }
+    .main-nav_menu{
+        display:none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header{
+        width: 100%;
+    }
+}

@@ -31,7 +31,7 @@
                         <input class="form-control mr-sm-2" type="text" placeholder="Search products ..." aria-label="Search" style="width:100%">
                     </div>
                 </form>        
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" onclick=collapse_menu()>
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="user-action">
@@ -47,7 +47,7 @@
                 </div>
             </nav>
         </div>
-        <div class="header__second  ">
+        <div class="header__second navbar-collapse " id="navbarSupportedContent">
             <nav class="navbar-expand-sm ">
                     <ul class="navbar-nav header-menu-list ">
                         <span id="stt_item" style="display: none;"> 0 </span>
@@ -125,7 +125,7 @@
                         <h1 class="main-nav_menu-header">
                             Danh mục
                         </h1>
-                        <ul class="navbar-nav main-nav_menu-list ">
+                        <ul class="navbar-nav main-nav_menu-list " >
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Phòng Khách</a>
                             <li class="nav-item">
@@ -148,7 +148,7 @@
                             </li>
                         </ul>  
                     </div>
-                    <div class="col-sm-9 ">
+                    <div class="col-sm-9 align-self-center">
                         <img src="custom/images/bg-2.jpg" alt="" class="main-nav_menu-img">
                     </div>
                 </div>
@@ -312,7 +312,7 @@
                 </div>
             </div>
             <div class="img-sale">
-                <img src="./custom/images/bg-3.jpg" alt="" class="img-item container" style="height:100px">
+                <img src="./custom/images/bg-3.jpg" alt="" class="img-item container" style="height:100%">
             </div>
             <div class="best-seller">
                 <h2 class="best-seller_header">Best Sellers</h2>
@@ -435,10 +435,7 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="container">
-            Footer
-        </div>
-    </footer>
+    <iframe id="footer-page" src="./footer.html" height="500px" frameborder="0" scrolling="no"></iframe>
+    
 </body>
 </html>
