@@ -32,7 +32,7 @@ main{
     list-style: none;
     display: flex;
     flex-flow: row nowrap;
-    
+    justify-content: center;
 }
 .browwer_item-link{
     color: black;
@@ -62,21 +62,29 @@ main{
     display: flex;
     flex-direction: row wrap;
     justify-content: space-between;
+    margin: auto;
 }
 .department-title{
     background-color: var(--color-general);
-    padding: 3px;
-    padding-right: 10px;
+    padding: 0;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
 }
 .department-title_text{
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 500;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.department-title_link{
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
 .department-card{
-    flex-basis: 19% ;
+    flex-basis: 24% ;
     display: flex;
     height: 100%;
     flex-flow: column nowrap;
@@ -96,6 +104,7 @@ main{
     color: #333333;
     font-weight: 500;
     font-size: 16px;
+    
 }
 .department-card_link-name:hover{
     text-decoration: underline;
@@ -106,9 +115,4 @@ main{
     color:black;
     font-weight: bold;
 
-}
-
-/* Footer */
-footer{
-    background-color:var(--color-general);
 }
