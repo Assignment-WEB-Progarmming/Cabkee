@@ -37,7 +37,7 @@ $bestSeller = executeResult('select * from db_product where special = "bestSelle
                     <span><img src="./custom/images/brand3.png" alt="" style="height: 20px"></span>
                 </a>
                 <!--Collapse-->
-                <form class="form-inline">
+                <form class="form-inline" >
                     <div class=" md-form my-0 in-search">
                         <input class="form-control mr-sm-2" type="text" placeholder="Search products ..." aria-label="Search" style="width:100%">
                     </div>
@@ -45,6 +45,12 @@ $bestSeller = executeResult('select * from db_product where special = "bestSelle
                 <button class="navbar-toggler" type="button" onclick=collapse_menu()>
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="shopping-cart">
+                    <a href="cart.php" class="cart-link">
+                        <span class="fa fa-shopping-cart cart-icon "></span>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
                 <div class="user-action">
                     <i class="glyphicon glyphicon-user"></i>
                     <a href="#" class="login">

@@ -18,16 +18,21 @@ body{
     background-color: white !important;
     max-width: 1200px;
     margin: 0 auto;
+    display:flex;
+    flex-flow: row;
 } 
+.form-inline{
+    flex:1;
+}
 .in-search{
-    width: 50% !important;
+    width: 60% ;
     padding:0;
     padding-left: 5px;
     font-size: 14px !important;
     line-height: 1;
 }
 .header__first .form-inline{
-    flex: 1;
+    width: fit-content;
 }
 .login_icon{
     width: 10px;
@@ -73,6 +78,37 @@ body{
 .dropdown-item:hover{
     color:#0f7c39;
 }
+.shopping-cart{ 
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 20px;
+    padding: 0;
+}
+.cart-link{
+    padding: 15px 10px;
+    height: 60px;
+    display: block;
+}
+.cart-icon{
+    font-size: 30px;
+    text-align: left;
+    color: #333333;
+}
+.cart-count{
+    background: #007562;
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    background: #aaa;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    line-height: 17px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+}
 
 main{
     margin-top:105px;
@@ -103,11 +139,21 @@ footer{
         flex:1;
         font-size: 14px;
     }
+    .in-search{
+        width: 100% ;
+    }
     #navbarSupportedContent{
         display:block;
     }
 }
 @media screen and (max-width: 540px) {
+    .header__first{
+        width: 100% !important;
+    }
+    .navbar{
+        width: 540px !important;
+        margin:0;
+    }
     main{
         margin: 67px 10px 10px 20px;
     }
@@ -121,10 +167,25 @@ footer{
     .main-nav_menu{
         display:none;
     }
-}
-
-@media screen and (max-width: 480px) {
-    header{
-        width: 100%;
+    .login{
+        width: 50px;
+        display:flex;
+        flex-flow: column;
+    }
+    .login_icon img{
+        width: 20px !important;
+        height: 20px;
+    }
+    .login_content{
+        font-size:12px ;
+    }
+    .in-search{
+        width: 80% ;
+    }
+    .in-search input{
+        font-size:12px;
+    }
+    .header__second{
+        display:none;
     }
 }

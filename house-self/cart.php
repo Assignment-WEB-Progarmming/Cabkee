@@ -53,7 +53,7 @@ if (count($idList) > 0) {
             <header class="fixed-top">
                 <div class="header__first">
                     <nav class="navbar justify-content-between navbar-expand-sm bg-light navbar-light ">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="/index.html">
                             <img src="./custom/images/logo-nobrand.png" alt="" style="width: 40px">
                             <span><img src="./custom/images/brand3.png" alt="" style="height: 20px"></span>
                         </a>
@@ -186,12 +186,14 @@ if (count($idList) > 0) {
                                 <div class="product-img" style="flex-basis: 100px; margin:auto 10px;"><img
                                     src="' . $item['thumbnail'] . '" alt=""
                                     style="width: 80px; height:80px; border: 1px solid #E6E6E6;"></div>
-                                <div class="product-title"><span>' . $item['title'] . '</span></div>
+                                <div class="product-title">' . $item['title'] . '</div>
                                 <div class="product-price">' . number_format($num * $item['price'], 0, ',', '.') . ' đ</div>
                                 <div class="product-quality">
                                     <div class="d-flex align-content-center" style="height: 30px; flex-basis: 75%;">
+                                        <span> Số lượng:
                                         <input type="number" name="quality" id="textQuality" value="' . $num . '"
-                                        style="width: 50px; height: 100%; text-align: center;border:0;" readonly>
+                                        style="width: 30px; height: 100%; text-align: center;border:0;" readonly>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="btnDelete" style="width: 30px;">

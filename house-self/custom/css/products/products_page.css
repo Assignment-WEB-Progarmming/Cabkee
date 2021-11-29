@@ -159,7 +159,7 @@ main{
 /* Recommended Products */
 .recommended-products_list{
     display: flex;
-    flex-direction: row wrap;
+    flex-flow: row wrap;
     justify-content: space-between;
 }
 .recommended-products_item{
@@ -192,3 +192,29 @@ main{
 
 }
 
+@media screen and (max-width: 768px){
+    
+}
+@media screen and (max-width: 540px){
+        
+    .department-link{
+        flex-basis: 49% !important;
+    }
+        
+    .best-seller_list{
+        display:flex;
+        flex-flow: row wrap;
+    }
+    .best-seller_item{
+        flex-basis: 33.33% ;
+    }    
+    .recommended-products_list{
+        justify-content: flex-start;
+    }
+    .recommended-products_item{
+        flex-basis: 33.33% ;
+    }
+    .footer-icon-img{
+        display: none !important;
+    }
+}

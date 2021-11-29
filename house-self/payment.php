@@ -50,7 +50,7 @@ if (count($idList) > 0) {
         <link rel="stylesheet" href="./custom/css/products/header.css">
         <div class="header__first" onmouseover="hide_all_content()">
             <nav class="navbar justify-content-between navbar-expand-sm bg-light navbar-light ">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/index.html">
                     <img src="./custom/images/logo-nobrand.png" alt="" style="width: 40px">
                     <span><img src="./custom/images/brand3.png" alt="" style="height: 20px"></span>
                 </a>
@@ -243,7 +243,7 @@ if (count($idList) > 0) {
                                 </div>
                             </li>
                             <li class="ship-service-item d-flex flex-row ">
-                                <input type="radio" name="ship-service-item" id="way-2" style="align-self: center;" value="2">
+                                <input type="radio" name="ship-service-item" id="way-2" style="align-self: center;"value="2">
                                 <div class="d-flex flex-column flex-grow-1 ship-service-content">
                                     <span class="ship-service-title">GH nhanh</span>
                                     <span class="ship-service-price">36.400đ</span>
@@ -251,7 +251,7 @@ if (count($idList) > 0) {
                                 </div>
                             </li>
                             <li class="ship-service-item d-flex flex-row ">
-                                <input type="radio" name="ship-service-item" id="way-3" style="align-self: center;" value="3">
+                                <input type="radio" name="ship-service-item" id="way-3" style="align-self: center;"  value="3">
                                 <div class="d-flex flex-column flex-grow-1 ship-service-content">
                                     <span class="ship-service-title">GH hoả tốc</span>
                                     <span class="ship-service-price">63.000đ</span>
@@ -302,6 +302,13 @@ if (count($idList) > 0) {
     </main>
     <iframe id="footer-page" src="./footer.php" height="500px" frameborder="0" scrolling="no"></iframe>
     <script src="./custom/js/payment.js"></script>
+    <script>
+        var z = 18700;
+        var ship = [12,15,18];
+        $('#dvvc input').on('change', function() {
+            var x = $("input[name='ship-service-item']:checked").val(); 
+        });
+    </script>
 </body>
 
 </html>

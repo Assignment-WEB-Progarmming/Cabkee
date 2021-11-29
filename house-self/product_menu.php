@@ -29,7 +29,7 @@ $productByCategory = executeResult("select * from db_product where category in (
         <link rel="stylesheet" href="./custom/css/products/header.css">
         <div class="header__first" onmouseover="hide_all_content()">
             <nav class="navbar justify-content-between navbar-expand-sm bg-light navbar-light ">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/index.html">
                     <img src="./custom/images/logo-nobrand.png" alt="" style="width: 40px">
                     <span><img src="./custom/images/brand3.png" alt="" style="height: 20px" ></span>
                 </a>
@@ -42,6 +42,12 @@ $productByCategory = executeResult("select * from db_product where category in (
                 <button class="navbar-toggler" type="button" onclick=collapse_menu()>
                 <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="shopping-cart">
+                    <a href="cart.php" class="cart-link">
+                        <span class="fa fa-shopping-cart cart-icon "></span>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
                 <div class="user-action">
                     <i class="glyphicon glyphicon-user"></i>
                     <a href="#" class="login">

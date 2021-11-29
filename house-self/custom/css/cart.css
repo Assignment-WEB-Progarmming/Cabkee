@@ -116,7 +116,13 @@ main{
     opacity: 1;
 }
 
-/* footer */
-footer{
-    background-color:var(--color-general);
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .product-title{
+        background-color: red;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    
 }

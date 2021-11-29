@@ -43,13 +43,14 @@ main{
     padding: 0;
 }
 .result-set-header_filter{
-    padding: 10px 0;
-    margin: 0;
+    padding: 10px;
+    margin: 10px;
     height:40px;
 }
 .brower-list{
     list-style: none;
     display: flex;
+    padding: 10px ;
     flex-flow: row nowrap;
 }
 .browwer_item-link{
@@ -94,8 +95,8 @@ main{
     border: 1px solid var(--color-general);
 }
 .products-img{
-    height: 592px;
-    width: 592px;
+    height: 500px;
+    width: 500px;
 }
 span.review-text{
     color:#007562;
@@ -104,7 +105,6 @@ span.review-text{
     flex-basis: 38%;
     display:flex;
     flex-flow: column nowrap;
-
 }
 .item-card_price{
     font-size: 30px;
@@ -155,7 +155,9 @@ table td.col-3{
 .item-specific{
     flex-basis: 48%;
 }
-
+.department-title_text{
+    border-bottom: 3px solid #F57224;
+}
 .department-card{
     flex-basis: 24% ;
     display: flex;
@@ -188,4 +190,48 @@ table td.col-3{
     color:black;
     font-weight: bold;
 
+}
+@media screen and (max-width: 768px){
+        
+    .products-img{
+        width: 300px;
+        height: 300px;
+    }
+    .btnAdd{
+        font-size: 14px;;
+    }
+    .item-detail{
+        margin: 0 10px;
+        flex-flow: column-reverse!important;
+    }
+    .topic-item{
+        margin: 0 10px;;
+    }
+}
+
+@media screen and (max-width: 540px){
+    .browwer_item-link{
+       font-size: 12px;
+    }
+    .item-view{
+        flex-flow: column;
+    }
+    .products-img{
+        height: 200px;
+        width: 200px;
+    }
+    .title{
+        width: fit-content;
+    }
+    .col-3{
+        max-width: 30% !important;
+    }
+    img.footer-icon-img{
+        background-color: var(--color-general);
+        width: 50px !important;
+        height:50px;
+    }
+    .brower-list{
+        padding: 0 ;
+    }
 }
