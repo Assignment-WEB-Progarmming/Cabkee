@@ -24,7 +24,7 @@ main{
     max-width: 1200px;
     width: 100%;
     padding: 0;
-    background-color:red;
+    background-color:white;
 }
 .title{
     font-size: 26px;
@@ -115,13 +115,35 @@ main{
     opacity: 1;
 }
 
+
 /* Responsive */
 @media screen and (max-width: 768px) {
     .product-title{
-        background-color: black;
+        font-size: 14px;
+    }
+    .product-price{
+        font-size: 14px;
+    }
+    .product-quality span{
+        font-size: 12px;
+    }
+    .address-text{
+        font-size: 12px;
     }
 }
 
 @media screen and (max-width: 540px) {
-    
+    .cart-content{
+        flex-flow: column !important;
+    }
+    .list-products{
+        min-height: fit-content;
+        margin: 0px;
+    }
+    .address-text{
+        font-size: 14px;
+    }
+    .pay{
+        margin-right: 0px;
+    }
 }
