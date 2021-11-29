@@ -296,7 +296,7 @@ if (count($idList) > 0) {
                             <span>Đã bao gồm VAT (nếu có)</span>
                         </div>
                         <div class="pay-btn" style="padding:5px 10px">
-                            <input type="button" value="Đặt hàng" class="flex-grow-1 btnPay btn " onclick=cal_ship()>
+                            <input type="button" value="Đặt hàng" class="flex-grow-1 btnPay btn " >
                         </div>
                     </div>
                 </div>
