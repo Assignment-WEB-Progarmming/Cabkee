@@ -6,6 +6,25 @@ require_once('../utils/utilities.php');
 $list_category = executeResult('select * from db_category');
 $list_product = executeResult('select * from db_product');
 
+$cart = [];
+if (isset($_COOKIE['cart'])) {
+    $json = $_COOKIE['cart'];
+    $cart = json_decode($json, true);
+}
+$idList = [];
+foreach ($cart as $item) {
+    $idList[] = $item['id'];
+}
+if (count($idList) > 0) {
+    $idList = implode(',', $idList);
+    //[2, 5, 6] => 2,5,6
+
+    $sql = "select * from db_product where id in ($idList)";
+    $cartList = executeResult($sql);
+} else {
+    $cartList = [];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +65,7 @@ $list_product = executeResult('select * from db_product');
                 <div class="shopping-cart">
                     <a href="cart.php" class="cart-link">
                         <span class="fa fa-shopping-cart cart-icon "></span>
-                        <span class="cart-count">0</span>
+                        <span class="cart-count"><?php echo count($cartList) ?></span>
                     </a>
                 </div>
                 <div class="user-action">

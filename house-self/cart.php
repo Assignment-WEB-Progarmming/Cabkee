@@ -3,7 +3,7 @@ require_once('../db/dbhelper.php');
 require_once('../utils/utilities.php');
 $count = 0;
 $total = 0;
-$ship = 18000;
+$ship = 18700;
 $soSP = 0;
 
 $cart = [];
@@ -226,7 +226,7 @@ if (count($idList) > 0) {
                         <div class="cart-ship-price d-flex justify-content-between" style="padding:5px 10px">
                             <span>Phí giao hàng :</span>
                             <span><?php if($soSP == 0) $ship = 0 ;
-                                        else    $ship = 18000 ;
+                                        else    $ship = 18700 ;
                                         echo number_format($ship, 0, ',', '.');
                                         echo 'đ';
                                     ?>

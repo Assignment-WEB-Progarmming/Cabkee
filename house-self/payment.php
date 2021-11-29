@@ -3,7 +3,7 @@ require_once('../db/dbhelper.php');
 require_once('../utils/utilities.php');
 $count = 0;
 $total = 0;
-$ship = 18000;
+$ship = 18700;
 $soSP = 0;
 
 $cart = [];
@@ -236,7 +236,7 @@ if (count($idList) > 0) {
                         <hr style="width: 100px; margin: 5px 0; border-bottom: 3px solid #007562;border-top:none;">
                         <ul class="ship-service-list d-flex justify-content-between">
                             <li class="ship-service-item d-flex flex-row ">
-                                <input type="radio" name="ship-service-item" id="way-1" style="align-self: center;" checked value="1">
+                                <input type="radio" name="ship-service-item" id="way-1" style="align-self: center;" checked value="1" onclick=cal_ship(1)>
                                 <div class="d-flex flex-column flex-grow-1 ship-service-content">
                                     <span class="ship-service-title">GH tiêu chuẩn</span>
                                     <span class="ship-service-price">18.700đ</span>
@@ -244,7 +244,7 @@ if (count($idList) > 0) {
                                 </div>
                             </li>
                             <li class="ship-service-item d-flex flex-row ">
-                                <input type="radio" name="ship-service-item" id="way-2" style="align-self: center;"value="2">
+                                <input type="radio" name="ship-service-item" id="way-2" style="align-self: center;"value="2" onclick=cal_ship(2)>
                                 <div class="d-flex flex-column flex-grow-1 ship-service-content">
                                     <span class="ship-service-title">GH nhanh</span>
                                     <span class="ship-service-price">36.400đ</span>
@@ -252,7 +252,7 @@ if (count($idList) > 0) {
                                 </div>
                             </li>
                             <li class="ship-service-item d-flex flex-row ">
-                                <input type="radio" name="ship-service-item" id="way-3" style="align-self: center;"  value="3">
+                                <input type="radio" name="ship-service-item" id="way-3" style="align-self: center;"  value="3" onclick=cal_ship(3)>
                                 <div class="d-flex flex-column flex-grow-1 ship-service-content">
                                     <span class="ship-service-title">GH hoả tốc</span>
                                     <span class="ship-service-price">63.000đ</span>
@@ -287,14 +287,16 @@ if (count($idList) > 0) {
                         </div>
                         <div class="cart-total d-flex justify-content-between" style="padding:5px 10px">
                             <span style="font-weight: bold;">Tổng cộng:</span>
-                            <span style="font-weight: bold; color: #F57224; font-size: 20px;"><?php echo number_format($ship + $total, 0, ',', '.');
-                                                                                                echo 'đ' ?></span>
+                             <!-- <span style="font-weight: bold; color: #F57224; font-size: 20px;"><?php //echo number_format($ship + $total, 0, ',', '.'); -->
+                                                                                                //echo 'đ' ?></span> -->
+                            <span id="cart-total-text" style="font-weight: bold; color: #F57224; font-size: 20px;"><?php echo number_format($ship + $total, 0, ',', '.');
+                                                                                                echo 'đ' ?></span> 
                         </div>
                         <div style="font-size: 12px; text-align: right;">
                             <span>Đã bao gồm VAT (nếu có)</span>
                         </div>
                         <div class="pay-btn" style="padding:5px 10px">
-                            <input type="button" value="Đặt hàng" class="flex-grow-1 btnPay btn ">
+                            <input type="button" value="Đặt hàng" class="flex-grow-1 btnPay btn " onclick=cal_ship()>
                         </div>
                     </div>
                 </div>
@@ -304,11 +306,18 @@ if (count($idList) > 0) {
     <iframe id="footer-page" src="./footer.php" height="500px" frameborder="0" scrolling="no"></iframe>
     <script src="./custom/js/payment.js"></script>
     <script>
-        var z = 18700;
-        var ship = [12,15,18];
-        $('#dvvc input').on('change', function() {
-            var x = $("input[name='ship-service-item']:checked").val(); 
-        });
+        function cal_ship(num){
+            var x = 18700;
+            if(num == 2 ) x = 36400;
+            if(num == 3 ) x = 63000;            
+            var total = <?php echo $total ?> + x;
+            total = total.toString();
+            var ship = document.getElementById("phiShip");
+            x = x.toString();
+            ship.textContent = x.substr(0, 2)+"."+ x.substr(x.length-3, 3)+"đ";
+            var text = document.getElementById("cart-total-text");
+            text.innerText = total.substr(0, 2)+"."+ total.substr(total.length-6, 3)+ "."+ total.substr(total.length-3, 3)+"đ";
+        }
     </script>
 </body>
 
