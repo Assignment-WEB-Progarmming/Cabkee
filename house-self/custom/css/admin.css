@@ -225,3 +225,6 @@ a.article, a.article:hover {
 .table{
     margin-top:2cm;
 }
+.form-control-file{
+    width: 7cm;
+}
