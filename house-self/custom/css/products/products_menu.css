@@ -118,3 +118,44 @@ main{
     background-color: var(--color-general-3);
     border-color: var(--color-general-3);
 }
+
+@media screen and (max-width: 768px){
+    .department-card_link-name{
+        height:fit-content;
+    }
+    .department-title_text{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 414px){
+    .title{
+        font-size: 20px !important;
+    }
+    .topic-item{
+        flex-flow: column !important;
+    }
+    .department-title img{
+        display: none;
+    }
+    .department-title{
+        max-width: 100% !important;
+        display: flex !important;
+        flex-flow: row nowrap !important;
+        justify-content: space-between !important;
+    }
+    .department-title_text,
+    .department-title_link{
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 5px;
+        margin:auto 0;
+    }
+    .department-list{
+        flex-flow: row wrap !important;
+    }
+    .department-card{
+        flex-basis: 46%;
+    }
+}

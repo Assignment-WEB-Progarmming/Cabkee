@@ -146,16 +146,30 @@ footer{
         display:block;
     }
 }
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 414px) {
     .header__first{
         width: 100% !important;
     }
     .navbar{
-        width: 540px !important;
+        width: 100% !important;
         margin:0;
+    }
+    a.navbar-brand{
+        padding: 0 !important;
+    }
+    a.navbar-brand span img{
+        width: 72px;
+        height: 12px !important;
+        padding: 0;
     }
     main{
         margin: 67px 10px 10px 20px;
+    }
+    button.navbar-toggler{
+        padding: 0;
+    }
+    .shopping-cart{
+        margin: 0 5px;
     }
     .main-nav{
         height:fit-content;
@@ -180,7 +194,7 @@ footer{
         font-size:12px ;
     }
     .in-search{
-        width: 80% ;
+        width: 100% ;
     }
     .in-search input{
         font-size:12px;

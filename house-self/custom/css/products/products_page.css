@@ -196,7 +196,6 @@ main{
     
 }
 @media screen and (max-width: 540px){
-        
     .department-link{
         flex-basis: 49% !important;
     }

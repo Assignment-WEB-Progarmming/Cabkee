@@ -149,14 +149,14 @@ if (count($idList) > 0) {
     <main>
         <div class="container d-flex flex-column">
             <div class="cart-background d-flex ">
-                <div class="flex-fill" style="background-color: #EBEBE9">
+                <div class="flex-fill cart-background-img" style="background-color: #EBEBE9">
                     <img src="./custom/images/bg-payment-1.jpg" alt="">
                     <hr style="display:inline-block; width: 100px; margin: auto; border-bottom: 2px solid #F57224;border-top:none;">
                     <span class="title" style="position: absolute center">THANH TOÁN </span>
                     <hr style="display:inline-block; width: 100px; margin: auto; border-bottom: 2px solid #F57224;border-top:none;">
                 </div>
             </div>
-            <div class="d-flex flex-row justify-content-between" style="background-color: #EBEBE9; padding: 0 10px;">
+            <div class="d-flex flex-row justify-content-between payment-main-content" style="background-color: #EBEBE9; padding: 0 10px;">
                 <div class="left-col" style="background-color: #EBEBE9; margin: 10px 0;">
                     <div class="information left-row">
                         <div class="d-flex justify-content-between" style="padding:0 10px;">
@@ -198,7 +198,8 @@ if (count($idList) > 0) {
                                 <div class="product-title"><span>' . $item['title'] . '</span></div>
                                 <div class="product-price">' . number_format($num * $item['price'], 0, ',', '.') . ' đ</div>
                                 <div class="product-quatity">
-                                    <span style="opacity: 0.8;">Số lượng: </span>
+                                    <span class="quatity-1" style="opacity: 0.8;">Số lượng: </span>
+                                    <span class="quatity-2" style="display: none;">SL: </span>
                                     <span>' . $num . '</span>
                                 </div>
                             </div>
