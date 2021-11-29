@@ -7,6 +7,29 @@ $category = getGet('category');
 $productByID = executeResult("select * from db_product where id = $id");
 $relevantProducts = executeResult("select * from db_product where category = '$category'");
 $danhMucID = executeResult("select id from db_category where title = '$category'");
+
+
+$cart = [];
+if (isset($_COOKIE['cart'])) {
+    $json = $_COOKIE['cart'];
+    $cart = json_decode($json, true);
+}
+$idList = [];
+foreach ($cart as $item) {
+    $idList[] = $item['id'];
+}
+if (count($idList) > 0) {
+    $idList = implode(',', $idList);
+    //[2, 5, 6] => 2,5,6
+
+    $sql = "select * from db_product where id in ($idList)";
+    $cartList = executeResult($sql);
+} else {
+    $cartList = [];
+}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +71,7 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
                 <div class="shopping-cart">
                     <a href="cart.php" class="cart-link">
                         <span class="fa fa-shopping-cart cart-icon "></span>
-                        <span class="cart-count">0</span>
+                        <span class="cart-count"><?php echo count($cartList) ?></span>
                     </a>
                 </div>
                 <div class="user-action">
