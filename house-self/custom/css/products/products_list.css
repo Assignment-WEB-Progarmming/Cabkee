@@ -120,6 +120,11 @@ main{
 
 }
 
+#yesLogin {
+    font-weight: bold;
+    display: none;
+}
+
 @media screen and (max-width: 768px){
     .department-card_link-name{
         height:fit-content;

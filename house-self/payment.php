@@ -6,6 +6,10 @@ $total = 0;
 $ship = 18700;
 $soSP = 0;
 
+if(isset($_COOKIE['idUser'])) {
+    $user = executeResult('select * from db_user where id = '.$_COOKIE['idUser'].'');
+}
+
 $cart = [];
 if (isset($_COOKIE['cart'])) {
     $json = $_COOKIE['cart'];
@@ -24,7 +28,6 @@ if (count($idList) > 0) {
 } else {
     $cartList = [];
 }
-//var_dump($cartList)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,14 +46,15 @@ if (count($idList) > 0) {
 
     <link rel="stylesheet" href="./custom/css/products/header.css">
     <link rel="stylesheet" href="./custom/css/products/payment.css">
+    <script src="custom/js/products.js"></script>
 </head>
 
-<body>
+<body onload="checkCookie('idUser')">
     <header class="fixed-top">
         <link rel="stylesheet" href="./custom/css/products/header.css">
         <div class="header__first" onmouseover="hide_all_content()">
             <nav class="navbar justify-content-between navbar-expand-sm bg-light navbar-light ">
-                <a class="navbar-brand" href="/index.html">
+                <a class="navbar-brand" href="../index.php">
                     <img src="./custom/images/logo-nobrand.png" alt="" style="width: 40px">
                     <span><img src="./custom/images/brand3.png" alt="" style="height: 20px"></span>
                 </a>
@@ -63,7 +67,7 @@ if (count($idList) > 0) {
                 <button class="navbar-toggler" type="button" onclick=collapse_menu()>
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="user-action">
+                <div class="user-action" id="notLogin">
                     <i class="glyphicon glyphicon-user"></i>
                     <a href="#" class="login">
                         <span class="login_icon">
@@ -73,6 +77,10 @@ if (count($idList) > 0) {
                             Sign In
                         </span>
                     </a>
+                </div>
+                <div class="user-action" id="yesLogin">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <?php echo 'Xin chào '.$user[0]['hoTen'].'' ?>
                 </div>
             </nav>
         </div>
@@ -163,16 +171,21 @@ if (count($idList) > 0) {
                             <span style="font-size: 20px; font-weight: 500;">Thông tin giao hàng</span>
                             <a href="#" style="color: #1A9CB7">Chỉnh sửa</a>
                         </div>
-                        <div class="user-infor-sum">
-                            <div>
-                                <span class="user-name" style="margin-right: 20px; padding-left: 10px;">HUỲNH KIM HƯNG</span>
-                                <span class="tel-num">0378242406</span>
+                        <?php 
+                            echo 
+                            '
+                            <div class="user-infor-sum">
+                                <div>
+                                    <span class="user-name" style="margin-right: 20px; padding-left: 10px;">'.$user[0]['hoTen'].'</span>
+                                    <span class="tel-num">'.$user[0]['phone'].'</span>
+                                </div>
+                                <div>
+                                    <span class="fa fa-map-marker" style="padding: 10px;"></span>
+                                    <span class="address" style="padding-left: 10px 0;">'.$user[0]['diaChi'].'</span>
+                                </div>
                             </div>
-                            <div>
-                                <span class="fa fa-map-marker" style="padding: 10px;"></span>
-                                <span class="address" style="padding-left: 10px 0;">143B/1, đường Nguyễn Trung Trực, khu phố 8, Thị trấn Bến Lức, Huyện Bến Lức, Long An</span>
-                            </div>
-                        </div>
+                            ';
+                        ?>
                     </div>
                     <div class="cart left-row">
                         <div style="text-align: center; margin-bottom: 10px;">
