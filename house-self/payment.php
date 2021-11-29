@@ -43,12 +43,12 @@ if (count($idList) > 0) {
 
     <link rel="stylesheet" href="./custom/css/products/header.css">
     <link rel="stylesheet" href="./custom/css/products/payment.css">
-    <script src="custom/js/products.js"></script>
 </head>
 
 <body>
     <header class="fixed-top">
-        <div class="header__first">
+        <link rel="stylesheet" href="./custom/css/products/header.css">
+        <div class="header__first" onmouseover="hide_all_content()">
             <nav class="navbar justify-content-between navbar-expand-sm bg-light navbar-light ">
                 <a class="navbar-brand" href="#">
                     <img src="./custom/images/logo-nobrand.png" alt="" style="width: 40px">
@@ -60,7 +60,7 @@ if (count($idList) > 0) {
                         <input class="form-control mr-sm-2" type="text" placeholder="Search products ..." aria-label="Search" style="width:100%">
                     </div>
                 </form>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" onclick=collapse_menu()>
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="user-action">
@@ -76,39 +76,88 @@ if (count($idList) > 0) {
                 </div>
             </nav>
         </div>
-        <div class="header__second  ">
+        <div class="header__second navbar-collapse " id="navbarSupportedContent">
             <nav class="navbar-expand-sm ">
                 <ul class="navbar-nav header-menu-list ">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Phòng Khách</a>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Phòng Làm việc</a>
+                    <span id="stt_item" style="display: none;"> 0 </span>
+                    <li class="nav-item dropdown show ">
+                        <div>
+                            <a class="nav-link" href="product_list.php" onmouseover="set_show_index(0)">Phòng Khách</a>
+                            <div class="dropdown-menu" onmouseleave="hide_content(0)">
+                                <a class="dropdown-item" href="product_list.php">Sofa</a>
+                                <a class="dropdown-item" href="product_list.php">Ghế bành</a>
+                                <a class="dropdown-item" href="product_list.php">Bàn Coffee</a>
+                                <a class="dropdown-item" href="product_list.php">Tấm thảm</a>
+                                <a class="dropdown-item" href="product_list.php">Kệ tủ</a>
+                            </div>
+                        </div>
+                    <li class="nav-item dropdown show">
+                        <a class="nav-link" href="#" onmouseover="set_show_index(1)">Phòng Làm việc</a>
+                        <div class="dropdown-menu" onmouseleave="hide_content(1)">
+                            <a class="dropdown-item" href="#">Bàn làm việc</a>
+                            <a class="dropdown-item" href="#">Kệ sách</a>
+                            <a class="dropdown-item" href="#">Ghế văn phòng</a>
+                            <a class="dropdown-item" href="#">Tủ hồ sơ</a>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Phòng Ngủ</a>
+                    <li class="nav-item dropdown show">
+                        <a class="nav-link" href="#" onmouseover="set_show_index(2)">Phòng Ngủ</a>
+                        <div class="dropdown-menu" onmouseleave="hide_content(2)">
+                            <a class="dropdown-item" href="#">Giường ngủ</a>
+                            <a class="dropdown-item" href="#">Tủ đầu giường</a>
+                            <a class="dropdown-item" href="#">Tủ quần áo</a>
+                            <a class="dropdown-item" href="#">Chăn gối</a>
+                            <a class="dropdown-item" href="#">Gương soi</a>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Đèn trang trí</a>
+                    <li class="nav-item dropdown show">
+                        <a class="nav-link" href="#" onmouseover="set_show_index(3)">Đèn trang trí</a>
+                        <div class="dropdown-menu" onmouseleave="hide_content(3)">
+                            <a class="dropdown-item" href="#">Đèn trần</a>
+                            <a class="dropdown-item" href="#">Đèn tường</a>
+                            <a class="dropdown-item" href="#">Đèn để bàn</a>
+                            <a class="dropdown-item" href="#">Đèn ngủ</a>
+                            <a class="dropdown-item" href="#">Đèn ngoài trời</a>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Bàn & Ghế</a>
+                    <li class="nav-item dropdown show">
+                        <a class="nav-link" href="#" onmouseover="set_show_index(4)">Bàn & Ghế</a>
+                        <div class="dropdown-menu" onmouseleave="hide_content(4)">
+                            <a class="dropdown-item" href="#">Bàn ăn</a>
+                            <a class="dropdown-item" href="#">Ghế phòng bếp</a>
+                            <a class="dropdown-item" href="#">Bàn tròn</a>
+                            <a class="dropdown-item" href="#">Ghế lười</a>
+                            <a class="dropdown-item" href="#">Ghế gỗ</a>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Đồ trang trí</a>
+                    <li class="nav-item dropdown show">
+                        <a class="nav-link" href="#" onmouseover="set_show_index(5)">Đồ trang trí</a>
+                        <div class="dropdown-menu" onmouseleave="hide_content(5)">
+                            <a class="dropdown-item" href="#">Đèn led</a>
+                            <a class="dropdown-item" href="#">Giấy dán tường</a>
+                            <a class="dropdown-item" href="#">Thảm lót chân</a>
+                            <a class="dropdown-item" href="#">Cây cảnh</a>
+                            <a class="dropdown-item" href="#">Rèm cửa</a>
+                        </div>
                     </li>
                 </ul>
         </div>
         </nav>
         </div>
+        <script src="./custom/js/header.js"></script>
     </header>
     <main>
         <div class="container d-flex flex-column">
-            <div class="cart-background">
-                <div class="title"><span> Thanh toán </span></div>
-                <hr style="width: 100px; margin: auto; border-bottom: 2px solid #F57224;border-top:none;">
+            <div class="cart-background d-flex ">
+                <div class="flex-fill" style="background-color: #EBEBE9">
+                    <img src="./custom/images/bg-payment-1.jpg" alt="">
+                    <hr style="display:inline-block; width: 100px; margin: auto; border-bottom: 2px solid #F57224;border-top:none;">
+                    <span class="title" style="position: absolute center">THANH TOÁN </span>
+                    <hr style="display:inline-block; width: 100px; margin: auto; border-bottom: 2px solid #F57224;border-top:none;">
+                </div>
             </div>
-            <div class="d-flex flex-row justify-content-between" style="background-color: #E6E6E6;">
-                <div class="left-col" style="background-color: #E6E6E6; margin: 10px 0;">
+            <div class="d-flex flex-row justify-content-between" style="background-color: #EBEBE9; padding: 0 10px;">
+                <div class="left-col" style="background-color: #EBEBE9; margin: 10px 0;">
                     <div class="information left-row">
                         <div class="d-flex justify-content-between" style="padding:0 10px;">
                             <span style="font-size: 20px; font-weight: 500;">Thông tin giao hàng</span>
@@ -150,7 +199,7 @@ if (count($idList) > 0) {
                                 <div class="product-price">' . number_format($num * $item['price'], 0, ',', '.') . ' đ</div>
                                 <div class="product-quatity">
                                     <span style="opacity: 0.8;">Số lượng: </span>
-                                    <span>'.$num.'</span>
+                                    <span>' . $num . '</span>
                                 </div>
                             </div>
                             ';
@@ -219,11 +268,13 @@ if (count($idList) > 0) {
                         </div>
                         <div class="cart-price-temp d-flex justify-content-between" style="padding:5px 10px">
                             <span>Tạm tính :</span>
-                            <span><?php echo number_format($total, 0, ',', '.'); echo 'đ' ?></span>
+                            <span><?php echo number_format($total, 0, ',', '.');
+                                    echo 'đ' ?></span>
                         </div>
                         <div class="cart-ship-price d-flex justify-content-between" style="padding:5px 10px">
                             <span>Phí giao hàng :</span>
-                            <span id="phiShip"><?php echo number_format($ship, 0, ',', '.'); echo 'đ' ?></span>
+                            <span id="phiShip"><?php echo number_format($ship, 0, ',', '.');
+                                                echo 'đ' ?></span>
                         </div>
                         <div class="cart-discount d-flex justify-content-between" style="padding:5px 10px">
                             <div style="flex-basis: 65%;">
@@ -235,7 +286,8 @@ if (count($idList) > 0) {
                         </div>
                         <div class="cart-total d-flex justify-content-between" style="padding:5px 10px">
                             <span style="font-weight: bold;">Tổng cộng:</span>
-                            <span style="font-weight: bold; color: #F57224; font-size: 20px;"><?php echo number_format($ship + $total, 0, ',', '.'); echo 'đ' ?></span>
+                            <span style="font-weight: bold; color: #F57224; font-size: 20px;"><?php echo number_format($ship + $total, 0, ',', '.');
+                                                                                                echo 'đ' ?></span>
                         </div>
                         <div style="font-size: 12px; text-align: right;">
                             <span>Đã bao gồm VAT (nếu có)</span>
@@ -248,27 +300,8 @@ if (count($idList) > 0) {
             </div>
         </div>
     </main>
-    <footer>
-
-    </footer>
+    <iframe id="footer-page" src="./footer.php" height="500px" frameborder="0" scrolling="no"></iframe>
     <script src="./custom/js/payment.js"></script>
-    <!-- <script>
-        var z = 18700;
-        $('#dvvc input').on('change', function() {
-            var x = $("input[name='ship-service-item']:checked").val(); 
-            if(x == '1') {
-                z = 18700
-            } else if (x == '2') {
-                z = 36400
-            } else if (x == '3') {
-                z = 63000
-            }
-            $('#phiShip').html(z.toLocaleString('vi-VN', {
-                style: 'currency',
-                currency: 'VND'
-            }));
-        });
-    </script> -->
 </body>
 
 </html>

@@ -23,6 +23,9 @@ main{
     width: 100%;
     padding: 0;
 }
+.topic-item {
+    padding-bottom: 15px;
+}
 /* Top Nav */
 
 .result-set-header_filter{
