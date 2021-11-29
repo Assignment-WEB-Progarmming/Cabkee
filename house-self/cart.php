@@ -65,21 +65,18 @@ if (count($idList) > 0) {
                         </form>
                         <button class="navbar-toggler" type="button" onclick=collapse_menu()>
                             <span class="navbar-toggler-icon"></span>
-                            </form>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="user-action">
-                                <i class="glyphicon glyphicon-user"></i>
-                                <a href="#" class="login">
-                                    <span class="login_icon">
-                                        <img src="./custom/images/icon_login.png" alt="" style="width: 30px">
-                                    </span>
-                                    <span class="login_content">
-                                        Sign In
-                                    </span>
-                                </a>
-                            </div>
+                        </button>
+                        <div class="user-action">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <a href="#" class="login">
+                                <span class="login_icon">
+                                    <img src="./custom/images/icon_login.png" alt="" style="width: 30px">
+                                </span>
+                                <span class="login_content">
+                                    Sign In
+                                </span>
+                            </a>
+                        </div>
                     </nav>
                 </div>
                 <div class="header__second navbar-collapse " id="navbarSupportedContent">
@@ -160,7 +157,7 @@ if (count($idList) > 0) {
                 <span class="title"> GIỎ HÀNG </span>
                 <hr style="width: 100px; margin: auto; border-bottom: 2px solid #F57224;border-top:none;">
             </div>
-            <div class="d-flex flex-row justify-content-between">
+            <div class="d-flex flex-row justify-content-between cart-content">
                 <div class="list-products">
                     <div style="padding: 5px 0; border-bottom: 1px solid #E6E6E6;">
                         <input type="checkbox" name="select-products" style="width: 16px; height: 16px;margin: auto 10px;" id="">
@@ -228,8 +225,12 @@ if (count($idList) > 0) {
                         </div>
                         <div class="cart-ship-price d-flex justify-content-between" style="padding:5px 10px">
                             <span>Phí giao hàng :</span>
-                            <span><?php echo number_format($ship, 0, ',', '.');
-                                    echo 'đ' ?></span>
+                            <span><?php if($soSP == 0) $ship = 0 ;
+                                        else    $ship = 18000 ;
+                                        echo number_format($ship, 0, ',', '.');
+                                        echo 'đ';
+                                    ?>
+                                </span> 
                         </div>
                         <div class="cart-discount d-flex justify-content-between" style="padding:5px 10px">
                             <div style="flex-basis: 65%;">
