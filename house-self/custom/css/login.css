@@ -418,7 +418,6 @@ button{
 }
 
 .login-box{
-  min-height: 800px;
-  height: 800px;
-  
+  min-height: 900px;
+  height: 900px; 
 }
