@@ -132,7 +132,30 @@ main{
     }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 414px) {
+    span.title{
+        font-size: 18px;
+    }
+    .product-img{
+        flex-basis: 20% !important;
+    }
+    .product-title{
+        flex-basis: 35% !important;
+        font-size: 14px;
+    }
+    .product-price{
+        flex-basis: 20% !important;
+        font-size: 12px;
+    }
+    .product-quality{
+        flex-basis: 17% !important;
+        padding: 0 5px;
+        width: 60px;
+        font-size: 12px;
+    }
+    .address-text{
+        font-size: 12px;
+    }
     .cart-content{
         flex-flow: column !important;
     }

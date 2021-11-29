@@ -159,12 +159,12 @@ if (count($idList) > 0) {
             </div>
             <div class="d-flex flex-row justify-content-between cart-content">
                 <div class="list-products">
-                    <div style="padding: 5px 0; border-bottom: 1px solid #E6E6E6;">
+                    <!-- <div style="padding: 5px 0; border-bottom: 1px solid #E6E6E6;">
                         <input type="checkbox" name="select-products" style="width: 16px; height: 16px;margin: auto 10px;" id="">
                         <span> Chọn tất cả ( </span>
-                        <span> <?php echo count($cartList) ?></span>
+                        <span> <?php //echo count($cartList) ?></span>
                         <span> sản phẩm )</span>
-                    </div>
+                    </div> -->
                     <?php
                     if (count($cartList) != 0) {
                         foreach ($cartList as $item) {
