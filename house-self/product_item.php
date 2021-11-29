@@ -10,7 +10,6 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Sản phẩm</title>
     <link href="/house-self/custom/images/logo.png" rel="icon" type="image/x-icon" />
@@ -22,70 +21,114 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="custom/css/products/header.css">
-    <link rel="stylesheet" href="custom/css/products/products_list.css">
-    <link rel="stylesheet" href="custom/css/products/products_item.css">
-    <script src="custom/js/products.js"></script>
+    
+    <link rel="stylesheet" href="./custom/css/products/header.css">
+    <link rel="stylesheet" href="./custom/css/products/products_item.css">
+    <script src="./custom/js/products.js"></script>
 </head>
-
-<body>
-    <header class="fixed-top">
+<body >
+    <header class="fixed-top" >
         <div id="success"></div>
-        <div class="header__first">
+        <link rel="stylesheet" href="./custom/css/products/header.css">
+        <div class="header__first" onmouseover="hide_all_content()">
             <nav class="navbar justify-content-between navbar-expand-sm bg-light navbar-light ">
                 <a class="navbar-brand" href="#">
                     <img src="./custom/images/logo-nobrand.png" alt="" style="width: 40px">
-                    <span><img src="./custom/images/brand3.png" alt="" style="height: 20px"></span>
+                    <span><img src="./custom/images/brand3.png" alt="" style="height: 20px" ></span>
                 </a>
                 <!--Collapse-->
-                <form class="form-inline">
+                <form class="form-inline" >
                     <div class=" md-form my-0 in-search">
                         <input class="form-control mr-sm-2" type="text" placeholder="Search products ..." aria-label="Search" style="width:100%">
                     </div>
-                </form>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                </form>        
+                <button class="navbar-toggler" type="button" onclick=collapse_menu()>
+                <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="user-ac tion">
+                <div class="user-action">
                     <i class="glyphicon glyphicon-user"></i>
                     <a href="#" class="login">
                         <span class="login_icon">
                             <img src="./custom/images/icon_login.png" alt="" style="width: 30px">
                         </span>
                         <span class="login_content">
-                            Sign In
+                            Sign In 
                         </span>
                     </a>
                 </div>
             </nav>
         </div>
-        <div class="header__second  ">
+        <div class="header__second navbar-collapse " id="navbarSupportedContent">
             <nav class="navbar-expand-sm ">
-                <ul class="navbar-nav header-menu-list ">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Phòng Khách</a>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Phòng Làm việc</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Phòng Ngủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Đèn trang trí</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Bàn & Ghế</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Đồ trang trí</a>
-                    </li>
-                </ul>
+                    <ul class="navbar-nav header-menu-list ">
+                        <span id="stt_item" style="display: none;"> 0 </span>
+                        <li class="nav-item dropdown show " >
+                            <div   >
+                                <a class="nav-link" href="product_list.php" onmouseover="set_show_index(0)" >Phòng Khách</a>
+                                <div class="dropdown-menu"  onmouseleave="hide_content(0)" >
+                                    <a class="dropdown-item" href="product_list.php">Sofa</a>
+                                    <a class="dropdown-item" href="product_list.php">Ghế bành</a>
+                                    <a class="dropdown-item" href="product_list.php">Bàn Coffee</a>
+                                    <a class="dropdown-item" href="product_list.php">Tấm thảm</a>
+                                    <a class="dropdown-item" href="product_list.php">Kệ tủ</a>
+                                </div>
+                            </div>
+                        <li class="nav-item dropdown show">
+                            <a class="nav-link" href="#" onmouseover="set_show_index(1)">Phòng Làm việc</a>
+                            <div class="dropdown-menu" onmouseleave="hide_content(1)" >
+                                <a class="dropdown-item" href="#">Bàn làm việc</a>
+                                <a class="dropdown-item" href="#">Kệ sách</a>
+                                <a class="dropdown-item" href="#">Ghế văn phòng</a>
+                                <a class="dropdown-item" href="#">Tủ hồ sơ</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown show">
+                            <a class="nav-link" href="#" onmouseover="set_show_index(2)">Phòng Ngủ</a>
+                            <div class="dropdown-menu" onmouseleave="hide_content(2)" >
+                                <a class="dropdown-item" href="#">Giường ngủ</a>
+                                <a class="dropdown-item" href="#">Tủ đầu giường</a>
+                                <a class="dropdown-item" href="#">Tủ quần áo</a>
+                                <a class="dropdown-item" href="#">Chăn gối</a>
+                                <a class="dropdown-item" href="#">Gương soi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown show">
+                            <a class="nav-link" href="#" onmouseover="set_show_index(3)">Đèn trang trí</a>
+                            <div class="dropdown-menu" onmouseleave="hide_content(3)" >
+                                <a class="dropdown-item" href="#">Đèn trần</a>
+                                <a class="dropdown-item" href="#">Đèn tường</a>
+                                <a class="dropdown-item" href="#">Đèn để bàn</a>
+                                <a class="dropdown-item" href="#">Đèn ngủ</a>
+                                <a class="dropdown-item" href="#">Đèn ngoài trời</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown show">
+                            <a class="nav-link" href="#" onmouseover="set_show_index(4)">Bàn & Ghế</a>
+                            <div class="dropdown-menu" onmouseleave="hide_content(4)" >
+                                <a class="dropdown-item" href="#">Bàn ăn</a>
+                                <a class="dropdown-item" href="#">Ghế phòng bếp</a>
+                                <a class="dropdown-item" href="#">Bàn tròn</a>
+                                <a class="dropdown-item" href="#">Ghế lười</a>
+                                <a class="dropdown-item" href="#">Ghế gỗ</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown show">
+                            <a class="nav-link" href="#" onmouseover="set_show_index(5)">Đồ trang trí</a>
+                            <div class="dropdown-menu" onmouseleave="hide_content(5)" >
+                                <a class="dropdown-item" href="#">Đèn led</a>
+                                <a class="dropdown-item" href="#">Giấy dán tường</a>
+                                <a class="dropdown-item" href="#">Thảm lót chân</a>
+                                <a class="dropdown-item" href="#">Cây cảnh</a>
+                                <a class="dropdown-item" href="#">Rèm cửa</a>
+                            </div>
+                        </li>
+                    </ul>  
+                </div>
+            </nav>
         </div>
-        </nav>
-        </div>
+        <script src="./custom/js/header.js"></script>
     </header>
-    <main>
+    <main >
         <div class="container">
             <div class="item-view">
                 <?php
@@ -133,10 +176,10 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
                 echo '</script>';
                 ?>
             </div>
-            <div class="item-detail d-flex flex-row justify-content-between">
+            <div class="item-detail d-flex flex-row justify-content-between" style="margin-top:20px">
                 <div class="item-description">
                     <div class="title">Mô tả sản phẩm</div>
-                    <div class="item-description-content">
+                    <div class="item-description-content" style="margin: 0 0 0 20px ;">
                         <ul>
                             <li>
                                 Căn hộ cửa bạn nhỏ chật trội, cửa hàng kinh doanh của bạn không gian bé, nơi làm việc của bạn không có chỗ nằm nghỉ ngơi, với chiếc Sofa tiện ích có đủ yếu tố và chế độ để phục vụ những nhu cầu thiết yếu của bạn.
@@ -165,27 +208,27 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
                         <table class="table table-bordered">
                             <tbody>
                                 <tr>
-                                    <td class="col-1">Mẫu thiết kế </td>
+                                    <td class="col-3">Mẫu thiết kế </td>
                                     <td>KS-297-GRY</td>
                                 </tr>
                                 <tr>
-                                    <td class="col-1">Mã sản phẩm</td>
+                                    <td class="col-3">Mã sản phẩm</td>
                                     <td>118372372</td>
                                 </tr>
                                 <tr>
-                                    <td class="col-1">Sản xuất bởi</td>
+                                    <td class="col-3">Sản xuất bởi</td>
                                     <td>Abbyson Living</td>
                                 </tr>
                                 <tr>
-                                    <td class="col-1">Kích thước</td>
+                                    <td class="col-3">Kích thước</td>
                                     <td>203cm * 91cm / 67 kg </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-1">Màu sắc</td>
+                                    <td class="col-3">Màu sắc</td>
                                     <td>Xám </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-1">Chất liệu</td>
+                                    <td class="col-3">Chất liệu</td>
                                     <td>Polyester, Ván ép, Khung gỗ cứng, Chân gỗ cao su</td>
                                 </tr>
                             </tbody>
@@ -193,17 +236,17 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
                     </div>
                 </div>
             </div>
-            <div class="topic-item">
+            <div class="topic-item d-flex flex-column">
                 <div class="department-title">
                     <h4 class="department-title_text">Sản phẩm liên quan</h4>
                 </div>
-                <ul class="department-list">
-                    <?php
+                <ul class="department-list d-flex flex-row">
+                <?php
                     foreach ($relevantProducts as $item) {
                         echo
                         '  
                         <li class="department-card">
-                            <a href="#" class="department-card_link">
+                            <a href="product_item.php?id=' . $item['id'] . '&category=' . $item['category'] . '" class="department-card_link">
                                 <img src="' . $item['thumbnail'] . '" alt="" class="department-card_img best-seller_img">
                                 <div class="department-card_link-name">' . $item['title'] . '</div>
                                 <div class="department-card_price ">' . number_format($item['price'], 0, ',', '.') . '</div>
@@ -222,12 +265,7 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
             <img src="./custom/images/products/living/bg-A1.png" alt="" class="banner-page" style="width: 100%;margin: 10px 0;">
         </div>
     </main>
-    <footer>
-        <div class="container">
-            Footer
-        </div>
-    </footer>
+    <iframe id="footer-page" src="./footer.php" height="500px" frameborder="0" scrolling="no"></iframe>
     <script src="custom/js/category.js"></script>
 </body>
-
 </html>
