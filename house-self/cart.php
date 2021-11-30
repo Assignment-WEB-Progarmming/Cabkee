@@ -6,6 +6,10 @@ $total = 0;
 $ship = 18700;
 $soSP = 0;
 
+if (isset($_COOKIE['idUser'])) {
+    $user = executeResult('select * from db_user where id = ' . $_COOKIE['idUser'] . '');
+}
+
 $cart = [];
 if (isset($_COOKIE['cart'])) {
     $json = $_COOKIE['cart'];
@@ -46,14 +50,14 @@ if (count($idList) > 0) {
     <script src="custom/js/products.js"></script>
 </head>
 
-<body>
+<body onload="checkCookie('idUser')">
     <header class="fixed-top">
         <link rel="stylesheet" href="./custom/css/products/header.css">
         <div class="header__first" onmouseover="hide_all_content()">
             <header class="fixed-top">
                 <div class="header__first">
                     <nav class="navbar justify-content-between navbar-expand-sm bg-light navbar-light ">
-                        <a class="navbar-brand" href="/index.html">
+                        <a class="navbar-brand" href="../index.php">
                             <img src="./custom/images/logo-nobrand.png" alt="" style="width: 40px">
                             <span><img src="./custom/images/brand3.png" alt="" style="height: 20px"></span>
                         </a>
@@ -66,9 +70,9 @@ if (count($idList) > 0) {
                         <button class="navbar-toggler" type="button" onclick=collapse_menu()>
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="user-action">
+                        <div class="user-action" id="notLogin">
                             <i class="glyphicon glyphicon-user"></i>
-                            <a href="#" class="login">
+                            <a href="login.php" class="login" id="login_logo">
                                 <span class="login_icon">
                                     <img src="./custom/images/icon_login.png" alt="" style="width: 30px">
                                 </span>
@@ -76,6 +80,10 @@ if (count($idList) > 0) {
                                     Sign In
                                 </span>
                             </a>
+                        </div>
+                        <div class="user-action" id="yesLogin">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <?php echo 'Xin chào ' . $user[0]['hoTen'] . '' ?>
                         </div>
                     </nav>
                 </div>
@@ -162,7 +170,8 @@ if (count($idList) > 0) {
                     <!-- <div style="padding: 5px 0; border-bottom: 1px solid #E6E6E6;">
                         <input type="checkbox" name="select-products" style="width: 16px; height: 16px;margin: auto 10px;" id="">
                         <span> Chọn tất cả ( </span>
-                        <span> <?php //echo count($cartList) ?></span>
+                        <span> <?php //echo count($cartList) 
+                                ?></span>
                         <span> sản phẩm )</span>
                     </div> -->
                     <?php
@@ -206,10 +215,15 @@ if (count($idList) > 0) {
                     <div class="address" style="border-bottom: 1.5px solid #cecece;">
                         <div class="address-title" style="padding: 10px;color: #969696;"><span>Địa chỉ giao hàng</span>
                         </div>
+                        <?php 
+                        echo 
+                        '
                         <div class="address-content">
                             <span class="fa fa-map-marker" style="padding: 10px;"></span>
-                            <span class="address-text">TP.HCM, Bình Thạnh, Phường 5</span>
+                            <span class="address-text">'.$user[0]['diaChi'].'</span>
                         </div>
+                        ';
+                        ?>
                     </div>
                     <div class="cart-information">
                         <div class="cart-title" style="padding : 10px;font-size: 20px;  font-weight: 500"><span>Thông
@@ -225,12 +239,12 @@ if (count($idList) > 0) {
                         </div>
                         <div class="cart-ship-price d-flex justify-content-between" style="padding:5px 10px">
                             <span>Phí giao hàng :</span>
-                            <span><?php if($soSP == 0) $ship = 0 ;
-                                        else    $ship = 18700 ;
-                                        echo number_format($ship, 0, ',', '.');
-                                        echo 'đ';
+                            <span><?php if ($soSP == 0) $ship = 0;
+                                    else    $ship = 18700;
+                                    echo number_format($ship, 0, ',', '.');
+                                    echo 'đ';
                                     ?>
-                                </span> 
+                            </span>
                         </div>
                         <div class="cart-discount d-flex justify-content-between" style="padding:5px 10px">
                             <div style="flex-basis: 65%;">

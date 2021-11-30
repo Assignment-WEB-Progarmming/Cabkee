@@ -221,3 +221,7 @@ a {
 ::placeholder {
     color: #b3b3b3
 }
+
+#sp_notLogin {
+    display: none;
+}

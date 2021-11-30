@@ -217,3 +217,8 @@ main{
         display: none !important;
     }
 }
+
+#yesLogin {
+    font-weight: bold;
+    display: none;
+}

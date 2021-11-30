@@ -211,3 +211,13 @@ button{
   border:2px solid red;
   color:red;  
 }
+
+#yesLogin {
+  font-weight: bold;
+  display: none;
+  line-height: 43px;
+}
+
+#sp_notLogin {
+  display: none;
+}

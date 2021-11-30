@@ -8,6 +8,9 @@ $productByID = executeResult("select * from db_product where id = $id");
 $relevantProducts = executeResult("select * from db_product where category = '$category'");
 $danhMucID = executeResult("select id from db_category where title = '$category'");
 
+if(isset($_COOKIE['idUser'])) {
+    $user = executeResult('select * from db_user where id = '.$_COOKIE['idUser'].'');
+}
 
 $cart = [];
 if (isset($_COOKIE['cart'])) {
@@ -49,13 +52,13 @@ if (count($idList) > 0) {
     <link rel="stylesheet" href="./custom/css/products/products_item.css">
     <script src="./custom/js/products.js"></script>
 </head>
-<body >
+<body onload="checkCookie('idUser')">
     <header class="fixed-top" >
         <div id="success"></div>
         <link rel="stylesheet" href="./custom/css/products/header.css">
         <div class="header__first" onmouseover="hide_all_content()">
             <nav class="navbar justify-content-between navbar-expand-sm bg-light navbar-light ">
-                <a class="navbar-brand" href="/index.html">
+                <a class="navbar-brand" href="../index.php">
                     <img src="./custom/images/logo-nobrand.png" alt="" style="width: 40px">
                     <span><img src="./custom/images/brand3.png" alt="" style="height: 20px" ></span>
                 </a>
@@ -74,7 +77,7 @@ if (count($idList) > 0) {
                         <span class="cart-count"><?php echo count($cartList) ?></span>
                     </a>
                 </div>
-                <div class="user-action">
+                <div class="user-action" id="notLogin">
                     <i class="glyphicon glyphicon-user"></i>
                     <a href="#" class="login">
                         <span class="login_icon">
@@ -84,6 +87,10 @@ if (count($idList) > 0) {
                             Sign In 
                         </span>
                     </a>
+                </div>
+                <div class="user-action" id="yesLogin">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <?php echo 'Xin chào '.$user[0]['hoTen'].'' ?>
                 </div>
             </nav>
         </div>
