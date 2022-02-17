@@ -1,0 +1,91 @@
+html,
+body,
+.view {
+  height: 100%;
+}
+
+@import url(//db.onlinewebfonts.com/c/ba69ea70a1f187353aa8dc0ff159cce9?family=Bellfort);
+@import url(//db.onlinewebfonts.com/c/f74aa8714b210bf4e9b898056b9fb509?family=Rigatoni+Sans+Thin);
+@import url(//db.onlinewebfonts.com/c/9e972508ce574c6c42f90006a9b7e18b?family=Dealer+Strikes+Straight);
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+@import url(//db.onlinewebfonts.com/c/b4ccc98add6cc60de17dbb589dca2164?family=Juventus+Fans+Bold);
+
+@media (max-width: 740px) {
+  html,
+  body,
+  .view {
+    height: 100vh;
+  }
+}
+.bg {
+  /* The image used */
+  background-image: url("/house-self/custom/images/background2-brightness.jpg");
+
+  /* Full height */
+  height: 100%;
+  
+  /* Center and scale the image nicely */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg1 {
+  /* The image used */
+  background-image: url("/house-self/custom/images/z2290751990143_1c02019a6621851edda724968d6befc1.jpg");
+
+  /* Full height */
+  height: 100%;
+  
+  /* Center and scale the image nicely */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.top-nav-collapse {
+  background-color: transparent !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background-color:#ffffff;
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background-color: #ffffff;
+  }
+}
+
+.nav-item{
+  font-family: 'Juventus Fans Bold';
+  font-size: 18px;
+  padding-left: 0.7cm;
+}
+
+
+
+
+
+/*Footer*/
+.style-footer{
+  font-family: 'Bellfort';
+}
+.fb-ic{
+  padding: 15px;
+}
+.tw-ic{
+  padding: 15px;
+}
+.gplus-ic{
+  padding: 15px;
+}
+.li-ic{
+  padding: 15px;
+}
+.ins-ic{
+  padding: 15px;
+<<<<<<< HEAD
+}
+=======
+}
+
+>>>>>>> 5d825916ba08d8d63f808dd62191c3b94a019b53

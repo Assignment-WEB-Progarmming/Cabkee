@@ -3,8 +3,12 @@ require_once('../db/dbhelper.php');
 require_once('../utils/utilities.php');
 $count = 0;
 $total = 0;
-$ship = 18000;
+$ship = 18700;
 $soSP = 0;
+
+if(isset($_COOKIE['idUser'])) {
+    $user = executeResult('select * from db_user where id = '.$_COOKIE['idUser'].'');
+}
 
 $cart = [];
 if (isset($_COOKIE['cart'])) {
@@ -24,7 +28,6 @@ if (count($idList) > 0) {
 } else {
     $cartList = [];
 }
-//var_dump($cartList)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,14 +46,15 @@ if (count($idList) > 0) {
 
     <link rel="stylesheet" href="./custom/css/products/header.css">
     <link rel="stylesheet" href="./custom/css/products/payment.css">
+    <script src="custom/js/products.js"></script>
 </head>
 
-<body>
+<body onload="checkCookie('idUser')">
     <header class="fixed-top">
         <link rel="stylesheet" href="./custom/css/products/header.css">
         <div class="header__first" onmouseover="hide_all_content()">
             <nav class="navbar justify-content-between navbar-expand-sm bg-light navbar-light ">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="../index.php">
                     <img src="./custom/images/logo-nobrand.png" alt="" style="width: 40px">
                     <span><img src="./custom/images/brand3.png" alt="" style="height: 20px"></span>
                 </a>
@@ -63,7 +67,7 @@ if (count($idList) > 0) {
                 <button class="navbar-toggler" type="button" onclick=collapse_menu()>
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="user-action">
+                <div class="user-action" id="notLogin">
                     <i class="glyphicon glyphicon-user"></i>
                     <a href="#" class="login">
                         <span class="login_icon">
@@ -73,6 +77,10 @@ if (count($idList) > 0) {
                             Sign In
                         </span>
                     </a>
+                </div>
+                <div class="user-action" id="yesLogin">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <?php echo 'Xin chào '.$user[0]['hoTen'].'' ?>
                 </div>
             </nav>
         </div>
@@ -149,30 +157,35 @@ if (count($idList) > 0) {
     <main>
         <div class="container d-flex flex-column">
             <div class="cart-background d-flex ">
-                <div class="flex-fill" style="background-color: #EBEBE9">
+                <div class="flex-fill cart-background-img" style="background-color: #EBEBE9">
                     <img src="./custom/images/bg-payment-1.jpg" alt="">
                     <hr style="display:inline-block; width: 100px; margin: auto; border-bottom: 2px solid #F57224;border-top:none;">
                     <span class="title" style="position: absolute center">THANH TOÁN </span>
                     <hr style="display:inline-block; width: 100px; margin: auto; border-bottom: 2px solid #F57224;border-top:none;">
                 </div>
             </div>
-            <div class="d-flex flex-row justify-content-between" style="background-color: #EBEBE9; padding: 0 10px;">
+            <div class="d-flex flex-row justify-content-between payment-main-content" style="background-color: #EBEBE9; padding: 0 10px;">
                 <div class="left-col" style="background-color: #EBEBE9; margin: 10px 0;">
                     <div class="information left-row">
                         <div class="d-flex justify-content-between" style="padding:0 10px;">
                             <span style="font-size: 20px; font-weight: 500;">Thông tin giao hàng</span>
                             <a href="#" style="color: #1A9CB7">Chỉnh sửa</a>
                         </div>
-                        <div class="user-infor-sum">
-                            <div>
-                                <span class="user-name" style="margin-right: 20px; padding-left: 10px;">HUỲNH KIM HƯNG</span>
-                                <span class="tel-num">0378242406</span>
+                        <?php 
+                            echo 
+                            '
+                            <div class="user-infor-sum">
+                                <div>
+                                    <span class="user-name" style="margin-right: 20px; padding-left: 10px;">'.$user[0]['hoTen'].'</span>
+                                    <span class="tel-num">'.$user[0]['phone'].'</span>
+                                </div>
+                                <div>
+                                    <span class="fa fa-map-marker" style="padding: 10px;"></span>
+                                    <span class="address" style="padding-left: 10px 0;">'.$user[0]['diaChi'].'</span>
+                                </div>
                             </div>
-                            <div>
-                                <span class="fa fa-map-marker" style="padding: 10px;"></span>
-                                <span class="address" style="padding-left: 10px 0;">143B/1, đường Nguyễn Trung Trực, khu phố 8, Thị trấn Bến Lức, Huyện Bến Lức, Long An</span>
-                            </div>
-                        </div>
+                            ';
+                        ?>
                     </div>
                     <div class="cart left-row">
                         <div style="text-align: center; margin-bottom: 10px;">
@@ -198,7 +211,8 @@ if (count($idList) > 0) {
                                 <div class="product-title"><span>' . $item['title'] . '</span></div>
                                 <div class="product-price">' . number_format($num * $item['price'], 0, ',', '.') . ' đ</div>
                                 <div class="product-quatity">
-                                    <span style="opacity: 0.8;">Số lượng: </span>
+                                    <span class="quatity-1" style="opacity: 0.8;">Số lượng: </span>
+                                    <span class="quatity-2" style="display: none;">SL: </span>
                                     <span>' . $num . '</span>
                                 </div>
                             </div>
@@ -235,7 +249,7 @@ if (count($idList) > 0) {
                         <hr style="width: 100px; margin: 5px 0; border-bottom: 3px solid #007562;border-top:none;">
                         <ul class="ship-service-list d-flex justify-content-between">
                             <li class="ship-service-item d-flex flex-row ">
-                                <input type="radio" name="ship-service-item" id="way-1" style="align-self: center;" checked value="1">
+                                <input type="radio" name="ship-service-item" id="way-1" style="align-self: center;" checked value="1" onclick=cal_ship(1)>
                                 <div class="d-flex flex-column flex-grow-1 ship-service-content">
                                     <span class="ship-service-title">GH tiêu chuẩn</span>
                                     <span class="ship-service-price">18.700đ</span>
@@ -243,7 +257,7 @@ if (count($idList) > 0) {
                                 </div>
                             </li>
                             <li class="ship-service-item d-flex flex-row ">
-                                <input type="radio" name="ship-service-item" id="way-2" style="align-self: center;" value="2">
+                                <input type="radio" name="ship-service-item" id="way-2" style="align-self: center;"value="2" onclick=cal_ship(2)>
                                 <div class="d-flex flex-column flex-grow-1 ship-service-content">
                                     <span class="ship-service-title">GH nhanh</span>
                                     <span class="ship-service-price">36.400đ</span>
@@ -251,7 +265,7 @@ if (count($idList) > 0) {
                                 </div>
                             </li>
                             <li class="ship-service-item d-flex flex-row ">
-                                <input type="radio" name="ship-service-item" id="way-3" style="align-self: center;" value="3">
+                                <input type="radio" name="ship-service-item" id="way-3" style="align-self: center;"  value="3" onclick=cal_ship(3)>
                                 <div class="d-flex flex-column flex-grow-1 ship-service-content">
                                     <span class="ship-service-title">GH hoả tốc</span>
                                     <span class="ship-service-price">63.000đ</span>
@@ -286,14 +300,16 @@ if (count($idList) > 0) {
                         </div>
                         <div class="cart-total d-flex justify-content-between" style="padding:5px 10px">
                             <span style="font-weight: bold;">Tổng cộng:</span>
-                            <span style="font-weight: bold; color: #F57224; font-size: 20px;"><?php echo number_format($ship + $total, 0, ',', '.');
-                                                                                                echo 'đ' ?></span>
+                             <!-- <span style="font-weight: bold; color: #F57224; font-size: 20px;"><?php //echo number_format($ship + $total, 0, ',', '.'); -->
+                                                                                                //echo 'đ' ?></span> -->
+                            <span id="cart-total-text" style="font-weight: bold; color: #F57224; font-size: 20px;"><?php echo number_format($ship + $total, 0, ',', '.');
+                                                                                                echo 'đ' ?></span> 
                         </div>
                         <div style="font-size: 12px; text-align: right;">
                             <span>Đã bao gồm VAT (nếu có)</span>
                         </div>
                         <div class="pay-btn" style="padding:5px 10px">
-                            <input type="button" value="Đặt hàng" class="flex-grow-1 btnPay btn ">
+                            <input type="button" value="Đặt hàng" class="flex-grow-1 btnPay btn " >
                         </div>
                     </div>
                 </div>
@@ -302,6 +318,20 @@ if (count($idList) > 0) {
     </main>
     <iframe id="footer-page" src="./footer.php" height="500px" frameborder="0" scrolling="no"></iframe>
     <script src="./custom/js/payment.js"></script>
+    <script>
+        function cal_ship(num){
+            var x = 18700;
+            if(num == 2 ) x = 36400;
+            if(num == 3 ) x = 63000;            
+            var total = <?php echo $total ?> + x;
+            total = total.toString();
+            var ship = document.getElementById("phiShip");
+            x = x.toString();
+            ship.textContent = x.substr(0, 2)+"."+ x.substr(x.length-3, 3)+"đ";
+            var text = document.getElementById("cart-total-text");
+            text.innerText = total.substr(0, 2)+"."+ total.substr(total.length-6, 3)+ "."+ total.substr(total.length-3, 3)+"đ";
+        }
+    </script>
 </body>
 
 </html>

@@ -5,6 +5,30 @@ require_once('../utils/utilities.php');
 $id = getGet('id');
 $productByCategory = executeResult("select * from db_product where category in (select title from db_category where id = $id)");
 
+if(isset($_COOKIE['idUser'])) {
+    $user = executeResult('select * from db_user where id = '.$_COOKIE['idUser'].'');
+}
+
+$cart = [];
+if (isset($_COOKIE['cart'])) {
+    $json = $_COOKIE['cart'];
+    $cart = json_decode($json, true);
+}
+$idList = [];
+foreach ($cart as $item) {
+    $idList[] = $item['id'];
+}
+if (count($idList) > 0) {
+    $idList = implode(',', $idList);
+    //[2, 5, 6] => 2,5,6
+
+    $sql = "select * from db_product where id in ($idList)";
+    $cartList = executeResult($sql);
+} else {
+    $cartList = [];
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,12 +48,12 @@ $productByCategory = executeResult("select * from db_product where category in (
     <link rel="stylesheet" href="./custom/css/products/products_menu.css">
     <script src="./custom/js/products.js"></script>
 </head>
-<body >
+<body onload="checkCookie('idUser')">
     <header class="fixed-top" >
         <link rel="stylesheet" href="./custom/css/products/header.css">
         <div class="header__first" onmouseover="hide_all_content()">
             <nav class="navbar justify-content-between navbar-expand-sm bg-light navbar-light ">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="../index.php">
                     <img src="./custom/images/logo-nobrand.png" alt="" style="width: 40px">
                     <span><img src="./custom/images/brand3.png" alt="" style="height: 20px" ></span>
                 </a>
@@ -42,7 +66,13 @@ $productByCategory = executeResult("select * from db_product where category in (
                 <button class="navbar-toggler" type="button" onclick=collapse_menu()>
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="user-action">
+                <div class="shopping-cart">
+                    <a href="cart.php" class="cart-link">
+                        <span class="fa fa-shopping-cart cart-icon "></span>
+                        <span class="cart-count"><?php echo count($cartList) ?></span>
+                    </a>
+                </div>
+                <div class="user-action" id="notLogin">
                     <i class="glyphicon glyphicon-user"></i>
                     <a href="#" class="login">
                         <span class="login_icon">
@@ -52,6 +82,10 @@ $productByCategory = executeResult("select * from db_product where category in (
                             Sign In 
                         </span>
                     </a>
+                </div>
+                <div class="user-action" id="yesLogin">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <?php echo 'Xin chào '.$user[0]['hoTen'].'' ?>
                 </div>
             </nav>
         </div>

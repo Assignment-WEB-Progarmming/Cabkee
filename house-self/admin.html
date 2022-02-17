@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="/house-self/custom/images/logo-lightbackground.png" rel="icon" type="image/x-icon" />
 
-    <title>Admin</title>
+    <title>Admin - Account</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -27,7 +27,7 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <a class="navbar-brand" href="#">
-                    <img class="image-fluid" src="/house-self/custom/images/logo.png" alt="" style="width: 100px;">
+                    <img class="image-fluid" src="/house-self/custom/images/logotrim.png" alt="" style="width: 120px;">
                 </a>
             </div>
 
@@ -38,11 +38,11 @@
 
                 </li>
                 <li>
-                    <a href="/house-self/admin/comment.html">Comments</a>
+                    <a href="/house-self/admin/purchase.html"> Purchase orders </a>
 
                 </li>
                 <li>
-                    <a href="/house-self/admin/dataItem.html">DB-Items</a>
+                    <a href="/house-self/admin/dataItem.php">DB-Items</a>
                 </li>
                 <li>
                     <a href="#">Error</a>
@@ -74,42 +74,125 @@
                 </div>
             </nav>
             
-            <h2>List of Valid User Account</h2>
+
+            <form class="needs-validation" novalidate>
+                <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                    <label for="validationCustom03">Delete User</label>
+                    <input type="text" class="form-control" id="validationCustom03" placeholder="Type ID User. Ex:1111" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid city.
+                    </div>
+                  </div>
+
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                      Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                      You must agree before submitting.
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </form>
+              
+              <script>
+              // Example starter JavaScript for disabling form submissions if there are invalid fields
+              (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                  var forms = document.getElementsByClassName('needs-validation');
+                  // Loop over them and prevent submission
+                  var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                      if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                      }
+                      form.classList.add('was-validated');
+                    }, false);
+                  });
+                }, false);
+              })();
+              </script>
+
+            <h2 style="padding-top: 1cm;">List of Valid User Account</h2>
             <table class="table">
                 <thead class="thead-dark">
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Total(VND)</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Imail</th>
+                    <th scope="col">Phone</th>
+
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>1.000.000</td>
+                    <td>111111</td>
+                    <td>Vu</td>
+                    <td>KTX Dai hoc Bach Khoa, tp HCM</td>
+                    <td>vuuuhcmut</td>
+                    <td>vu123456</td>
+                    <td>vuuu@hcmut.edu.vn</td>
+                    <td>+84 111 111 111</td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                    <td>111111</td>
+                    <td>Vu</td>
+                    <td>KTX Dai hoc Bach Khoa, tp HCM</td>
+                    <td>vuuuhcmut</td>
+                    <td>vu123456</td>
+                    <td>vuuu@hcmut.edu.vn</td>
+                    <td>+84 111 111 111</td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
+                    <td>111111</td>
+                    <td>Vu</td>
+                    <td>KTX Dai hoc Bach Khoa, tp HCM</td>
+                    <td>vuuuhcmut</td>
+                    <td>vu123456</td>
+                    <td>vuuu@hcmut.edu.vn</td>
+                    <td>+84 111 111 111</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>111111</td>
+                    <td>Vu</td>
+                    <td>KTX Dai hoc Bach Khoa, tp HCM</td>
+                    <td>vuuuhcmut</td>
+                    <td>vu123456</td>
+                    <td>vuuu@hcmut.edu.vn</td>
+                    <td>+84 111 111 111</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>111111</td>
+                    <td>Vu</td>
+                    <td>KTX Dai hoc Bach Khoa, tp HCM</td>
+                    <td>vuuuhcmut</td>
+                    <td>vu123456</td>
+                    <td>vuuu@hcmut.edu.vn</td>
+                    <td>+84 111 111 111</td>
                   </tr>
                 </tbody>
-              </table>
+            </table>
               
-
             <div class="line"></div>
+
+
         </div>
     </div>
 

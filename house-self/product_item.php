@@ -7,6 +7,32 @@ $category = getGet('category');
 $productByID = executeResult("select * from db_product where id = $id");
 $relevantProducts = executeResult("select * from db_product where category = '$category'");
 $danhMucID = executeResult("select id from db_category where title = '$category'");
+
+if(isset($_COOKIE['idUser'])) {
+    $user = executeResult('select * from db_user where id = '.$_COOKIE['idUser'].'');
+}
+
+$cart = [];
+if (isset($_COOKIE['cart'])) {
+    $json = $_COOKIE['cart'];
+    $cart = json_decode($json, true);
+}
+$idList = [];
+foreach ($cart as $item) {
+    $idList[] = $item['id'];
+}
+if (count($idList) > 0) {
+    $idList = implode(',', $idList);
+    //[2, 5, 6] => 2,5,6
+
+    $sql = "select * from db_product where id in ($idList)";
+    $cartList = executeResult($sql);
+} else {
+    $cartList = [];
+}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,13 +52,13 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
     <link rel="stylesheet" href="./custom/css/products/products_item.css">
     <script src="./custom/js/products.js"></script>
 </head>
-<body >
+<body onload="checkCookie('idUser')">
     <header class="fixed-top" >
         <div id="success"></div>
         <link rel="stylesheet" href="./custom/css/products/header.css">
         <div class="header__first" onmouseover="hide_all_content()">
             <nav class="navbar justify-content-between navbar-expand-sm bg-light navbar-light ">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="../index.php">
                     <img src="./custom/images/logo-nobrand.png" alt="" style="width: 40px">
                     <span><img src="./custom/images/brand3.png" alt="" style="height: 20px" ></span>
                 </a>
@@ -45,7 +71,13 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
                 <button class="navbar-toggler" type="button" onclick=collapse_menu()>
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="user-action">
+                <div class="shopping-cart">
+                    <a href="cart.php" class="cart-link">
+                        <span class="fa fa-shopping-cart cart-icon "></span>
+                        <span class="cart-count"><?php echo count($cartList) ?></span>
+                    </a>
+                </div>
+                <div class="user-action" id="notLogin">
                     <i class="glyphicon glyphicon-user"></i>
                     <a href="#" class="login">
                         <span class="login_icon">
@@ -55,6 +87,10 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
                             Sign In 
                         </span>
                     </a>
+                </div>
+                <div class="user-action" id="yesLogin">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <?php echo 'Xin chào '.$user[0]['hoTen'].'' ?>
                 </div>
             </nav>
         </div>
@@ -138,7 +174,7 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
                         <div class="result-set-header">
                             <div class="result-set-header_filter">
                                 <ul class="brower-list">
-                                    <li class="brower-list_item"><a href="product_page.php" class="browwer_item-link">Trang danh mục</a></li>
+                                    <li class="brower-list_item"><a href="product_page.php" class="browwer_item-link">Tất cả sản phẩm</a></li>
                                     <li class="brower-list_item"><a href="product_list.php" class="browwer_item-link">Phòng Khách</a></li>
                                     <li class="brower-list_item"><a href="product_menu.php?id='.$danhMucID[0]['id'].'" class="browwer_item-link">' . $productByID[0]['category'] . '</a></li>
                                 </ul>
@@ -208,7 +244,7 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
                         <table class="table table-bordered">
                             <tbody>
                                 <tr>
-                                    <td class="col-3">Mẫu thiết kế </td>
+                                    <td class="col-3 ">Mẫu thiết kế </td>
                                     <td>KS-297-GRY</td>
                                 </tr>
                                 <tr>
@@ -240,7 +276,7 @@ $danhMucID = executeResult("select id from db_category where title = '$category'
                 <div class="department-title">
                     <h4 class="department-title_text">Sản phẩm liên quan</h4>
                 </div>
-                <ul class="department-list d-flex flex-row">
+                <ul class="department-list d-flex flex-row justify-content-between">
                 <?php
                     foreach ($relevantProducts as $item) {
                         echo

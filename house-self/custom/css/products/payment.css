@@ -127,3 +127,69 @@ main{
 .btnPay:hover{
     opacity: 1;
 }
+
+#yesLogin {
+    font-weight: bold;
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    .cart-background-img img{
+        display: none;
+    }
+    .cart-background-img{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .product-price{
+        flex: 3;
+        font-size:14px;
+    }
+    .product-quatity{
+        font-size: 12px;
+        padding-right: 10px;
+    }
+        
+    .ship-service-title,.ship-service-price,.ship-service-time{
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width:414px) {
+    .left-col{
+        padding-right:0px;
+    }
+   .payment-main-content{
+       flex-flow: column !important;
+   }
+   span.title{
+       font-size: 18px;
+   }
+   .product-price{
+        flex: 4;
+        font-size:14px;
+    }
+    .product-quatity{
+        font-size: 12px;
+        padding-right: 10px;
+    }
+    .product-title{
+        font-size: 14px;
+    }
+    .ship-service-title,.ship-service-price,.ship-service-time{
+        font-size: 12px;
+    }
+    .address{
+        font-size: 12px;
+    }
+    .quatity-1{
+        display: none !important;
+    }
+    .quatity-2{
+        display: inline !important;
+        padding: 0 5px;
+        opacity: 0.8;
+    }
+}

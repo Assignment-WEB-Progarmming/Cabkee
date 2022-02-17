@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="/house-self/custom/images/logo-lightbackground.png" rel="icon" type="image/x-icon" />
+    <link href="../custom/images/logo-lightbackground.png" rel="icon" type="image/x-icon" />
 
-    <title>Admin</title>
+    <title>Admin - Database Items</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="/house-self/custom/css/admin.css">
+    <link rel="stylesheet" href="../custom/css/admin.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -27,18 +27,18 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <a class="navbar-brand" href="#">
-                    <img class="image-fluid" src="/house-self/custom/images/logo.png" alt="" style="width: 100px;">
+                    <img class="image-fluid" src="../custom/images/logotrim.png" alt="" style="width: 120px;">
                 </a>
             </div>
 
             <ul class="list-unstyled components">
                 <p>Dashboard</p>
                 <li class=>
-                    <a href="/house-self/admin.html">Account</a>
+                    <a href="../admin.php">Account</a>
 
                 </li>
                 <li>
-                    <a href="/house-self/admin/comment.html">Comments</a>
+                    <a href="purchase.php">Purchase Order</a>
 
                 </li>
                 <li class="active">
@@ -73,42 +73,62 @@
                       </form>
                 </div>
             </nav>
-            
-            <h2>List of Valid User Account</h2>
+
+            <h2>List of Items</h2>
             <table class="table">
                 <thead class="thead-dark">
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Total</th>
+                    <th scope="col">Thumbnail</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Color</th>
+
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>111111</td>
+                        <td>Chair</td>
+                        <td>/link</td>
+                        <td>1$</td>
+                        <td>4.5</td>
+                        <td>Chair</td>
+                        <td>Chair to sit</td>
+                        <td>1$</td>
+
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>111111</td>
+                        <td>Vu</td>
+                        <td>@hcmut</td>
+                        <td>1.000.000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>111111</td>
+                        <td>Vu</td>
+                        <td>@hcmut</td>
+                        <td>1.000.000</td>
+                      </tr>
                 </tbody>
               </table>
               
 
             <div class="line"></div>
+
+            <form>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Example file input</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+            </form>
         </div>
     </div>
 
